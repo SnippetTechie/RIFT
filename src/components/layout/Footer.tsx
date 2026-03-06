@@ -1,4 +1,4 @@
-import revaUniversityLogo from "@/assets/LOGO_TRANSPARENT/reva_university.png";
+import revaUniversityLogo from "@/assets/logo/reva-university.png";
 import whatsappIcon from "@/assets/LOGO_TRANSPARENT/whatsapp.png";
 import linkedinIcon from "@/assets/LOGO_TRANSPARENT/linkedin.png";
 import footerGeometric from "@/assets/LOGO_TRANSPARENT/footer.png";
