@@ -8,93 +8,75 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+const faqData = [
   {
-    question: "What is REVA RIFT 2026?",
-    answer: "REVA RIFT 2026 is REVA University's flagship hackathon, focusing on building bold prototypes for India's tech future. It brings together developers, designers, and innovators to solve real-world problems over 48 hours.",
+    category: "General",
+    questions: [
+      { q: "Question", a: "Answer detail for the general question goes here. We keep it concise and relevant." },
+      { q: "Question", a: "Answer detail for the general question goes here. We keep it concise and relevant." },
+      { q: "Question", a: "Answer detail for the general question goes here. We keep it concise and relevant." },
+      { q: "Question", a: "Answer detail for the general question goes here. We keep it concise and relevant." },
+    ]
   },
   {
-    question: "Who can participate?",
-    answer: "Participation is open to all university students across India. We welcome diverse teams with skills in development, design, product management, and research.",
-  },
-  {
-    question: "What are the tracks for this year?",
-    answer: "We have 9 domain tracks including AI & Machine Learning, Fintech, HealthTech, Sustainability, Cybersecurity, and more. Check the 'The Divisions' section on the home page for full details.",
-  },
-  {
-    question: "Is there a registration fee?",
-    answer: "No, registration for REVA RIFT 2026 is completely free! We want to ensure that every innovator has a chance to participate regardless of their background.",
-  },
-  {
-    question: "Will travel expenses be covered?",
-    answer: "While we do not cover travel expenses, we provide free accommodation and meals for all selected participants at REVA University campus during the event.",
-  },
-  {
-    question: "How are teams formed?",
-    answer: "You can register as a pre-formed team of 2-4 members. If you don't have a team, we'll have networking sessions during the Pre-Summit to help you find like-minded teammates.",
-  },
+    category: "Category",
+    questions: [
+      { q: "Question", a: "Answer detail for this specific category question goes here." },
+      { q: "Question", a: "Answer detail for this specific category question goes here." },
+      { q: "Question", a: "Answer detail for this specific category question goes here." },
+      { q: "Question", a: "Answer detail for this specific category question goes here." },
+    ]
+  }
 ];
 
 const FAQs = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main className="pt-32 pb-24">
-        <div className="container max-w-3xl">
+      <main className="pt-32 pb-40">
+        <div className="container max-w-4xl">
+          {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-24"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Frequently Asked <span className="text-primary">Questions</span>
+            <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tight">
+              <span className="text-[#0052FF]">Frequently</span> Asked Questions
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Everything you need to know about REVA RIFT.
+            <p className="text-lg text-muted-foreground opacity-70">
+              description
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="bg-card/50 backdrop-blur-sm border border-border px-6 rounded-xl hover:border-primary/50 transition-colors"
-                >
-                  <AccordionTrigger className="text-left py-6 hover:no-underline font-semibold text-lg">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-20 p-8 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 text-center"
-          >
-            <h3 className="text-xl font-bold mb-3">Still have questions?</h3>
-            <p className="text-muted-foreground mb-6">Can't find what you're looking for? Reach out to our team.</p>
-            <a 
-              href="#contact" 
-              className="inline-flex h-11 items-center justify-center rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              Contact Support
-            </a>
-          </motion.div>
+          {/* FAQ Categories */}
+          <div className="space-y-24 mt-16 px-4">
+            {faqData.map((section, sIdx) => (
+              <div key={sIdx}>
+                <h2 className="text-4xl font-bold text-center text-[#0052FF] mb-12">
+                  {section.category}
+                </h2>
+                <Accordion type="single" collapsible className="w-full space-y-2">
+                  {section.questions.map((item, qIdx) => (
+                    <AccordionItem
+                      key={qIdx}
+                      value={`item-${sIdx}-${qIdx}`}
+                      className="border-b-[1px] border-foreground/10 px-0"
+                    >
+                      <AccordionTrigger className="text-xl font-medium hover:no-underline py-8 transition-colors hover:text-[#0052FF] [&>svg]:bg-[#F1F1F1] [&>svg]:rounded-full [&>svg]:p-1.5 [&>svg]:h-8 [&>svg]:w-8 [&>svg]:text-black [&>svg]:transition-transform">
+                        {item.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground pb-8 text-lg leading-relaxed">
+                        {item.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />
