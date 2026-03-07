@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import revaUniversityLogo from "@/assets/LOGO_TRANSPARENT/reva_university.png";
 import whatsappIcon from "@/assets/LOGO_TRANSPARENT/whatsapp.png";
 import linkedinIcon from "@/assets/LOGO_TRANSPARENT/linkedin.png";
@@ -20,33 +21,27 @@ const Footer = () => {
 
         <div className="h-56 border-r border-b border-foreground px-6 md:px-7 py-6 md:py-7">
           <div className="space-y-0 text-sm text-foreground/80">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/faqs"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
             >
               <span>FAQ</span>
               <span className="text-xs">↗</span>
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              to="/jury"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
             >
-              <span>Sponsorship</span>
+              <span>Jury</span>
               <span className="text-xs">↗</span>
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              to="/team"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
             >
-              <span>Contact</span>
+              <span>Team</span>
               <span className="text-xs">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
 
