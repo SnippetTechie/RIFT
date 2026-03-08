@@ -27,7 +27,7 @@
     left: 0;
     transform: translateY(-100%);
     display: flex;
-    gap: 6px;
+    gap: 10px;
     z-index: 10;
 }
 
@@ -38,29 +38,10 @@
     justify-content: center;
 }
 
-.icon-linkedin {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #0066FF;
-    border: 2px solid #0066FF;
-    border-radius: 4px;
-    font-family: 'BL Melody SemiBold', sans-serif;
-}
-
-.icon-x {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    font-size: 16px;
-    font-weight: 900;
-    color: #000000;
+.social-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(31%) sepia(94%) saturate(4100%) hue-rotate(212deg) brightness(101%) contrast(105%);
 }
 
 .triangle-left {

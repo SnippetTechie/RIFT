@@ -4,6 +4,8 @@ import "./static/Team.css";
 import bottomTriangle from "@/assets/images/team/bottom-triangle.svg";
 import topTriangle from "@/assets/images/team/top-triangle.svg";
 import mainPhoto from "@/assets/images/team/main.png";
+import linkedinIcon from "@/assets/icons/linkedin.svg";
+import xIcon from "@/assets/icons/x.svg";
 
 /*
  * ============================================================
@@ -75,10 +77,10 @@ function ProfileCard({ member }: { member: TeamMember | null }) {
         {member && (
           <div className="social-icons">
             <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <span className="icon-linkedin">in</span>
+              <img className="social-icon" src={linkedinIcon} alt="LinkedIn" draggable={false} />
             </a>
             <a href={member.twitter} target="_blank" rel="noopener noreferrer" aria-label="X">
-              <span className="icon-x">𝕏</span>
+              <img className="social-icon" src={xIcon} alt="X" draggable={false} />
             </a>
           </div>
         )}
@@ -113,7 +115,7 @@ export default function Team() {
       <main className="pt-24 md:pt-32 pb-20 md:pb-40">
         <div className="w-full flex flex-col items-center px-4 md:px-0">
           {/* Header Section */}
-          <div className="text-center mb-28 md:mb-60 flex flex-col items-center">
+          <div className="text-center mb-44 md:mb-60 flex flex-col items-center">
             <h1 className="mx-auto flex items-center justify-center" style={{
               fontFamily: "'BL Melody SemiBold', sans-serif",
               fontWeight: 600,
