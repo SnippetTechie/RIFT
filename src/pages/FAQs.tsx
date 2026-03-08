@@ -81,7 +81,7 @@ const FAQs = () => {
           <div className="space-y-12 mt-4 px-4">
             {faqData.map((section, sIdx) => (
               <div key={sIdx}>
-                <h2 className="text-2xl md:text-4xl font-bold text-center text-[#0052FF] mb-4" style={{ fontFamily: "'BL Melody SemiBold', sans-serif" }}>
+                <h2 className="text-2xl md:text-4xl font-bold text-center text-black mb-4" style={{ fontFamily: "'BL Melody SemiBold', sans-serif" }}>
                   {section.category}
                 </h2>
                 <Accordion
