@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 // Image imports
 import presummit1 from "@/assets/images/pre-schedule-showcase/presummit-1.webp";
@@ -118,12 +119,21 @@ const PreScheduleShowcase = () => {
                   <p className="text-sm font-normal leading-relaxed text-white/70">
                     {card.description}
                   </p>
-                  <button
-                    type="button"
-                    className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
-                  >
-                    {card.ctaLabel}
-                  </button>
+                  {card.accentWord === "Work" ? (
+                    <Link
+                      to="/workshops"
+                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                    >
+                      {card.ctaLabel}
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                    >
+                      {card.ctaLabel}
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -168,12 +178,21 @@ const PreScheduleShowcase = () => {
                   {card.description}
                 </p>
                 <div className="text-center">
-                  <button
-                    type="button"
-                    className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
-                  >
-                    {card.ctaLabel}
-                  </button>
+                  {card.accentWord === "Work" ? (
+                    <Link
+                      to="/workshops"
+                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                    >
+                      {card.ctaLabel}
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                    >
+                      {card.ctaLabel}
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.article>
