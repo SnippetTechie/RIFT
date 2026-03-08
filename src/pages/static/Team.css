@@ -8,6 +8,22 @@
     justify-content: center;
 }
 
+@media (max-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 352px);
+        row-gap: 180px;
+        column-gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        row-gap: 160px;
+        padding-top: 40px;
+    }
+}
+
 .profile-card {
     display: flex;
     flex-direction: column;
@@ -19,6 +35,15 @@
     width: 352px;
     height: 176px;
     background-color: #0066FF;
+}
+
+@media (max-width: 400px) {
+    .blue-box {
+        width: 100%;
+        max-width: 352px;
+        aspect-ratio: 2 / 1;
+        height: auto;
+    }
 }
 
 .social-icons {
@@ -68,6 +93,15 @@
     pointer-events: none;
 }
 
+@media (max-width: 400px) {
+    .profile-photo {
+        width: 100%;
+        max-width: 352px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
 .triangle-right {
     position: absolute;
     right: -3px;
@@ -86,6 +120,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+@media (max-width: 400px) {
+    .profile-info {
+        width: 100%;
+        max-width: 352px;
+    }
 }
 
 .profile-name {
