@@ -2,6 +2,17 @@ import { useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+// Image imports
+import presummit1 from "@/assets/images/pre-schedule-showcase/presummit-1.webp";
+import presummit2 from "@/assets/images/pre-schedule-showcase/presummit-2.webp";
+import presummit3 from "@/assets/images/pre-schedule-showcase/presummit-3.webp";
+import workshop1 from "@/assets/images/pre-schedule-showcase/workshop-1.webp";
+import workshop2 from "@/assets/images/pre-schedule-showcase/workshop-2.webp";
+import workshop3 from "@/assets/images/pre-schedule-showcase/workshop-3.webp";
+import divisions1 from "@/assets/images/pre-schedule-showcase/divisions-1.webp";
+import divisions2 from "@/assets/images/pre-schedule-showcase/divisions-2.webp";
+import divisions3 from "@/assets/images/pre-schedule-showcase/divisions-3.webp";
+
 type ShowcaseCard = {
   title: string;
   accentWord: string;
@@ -10,7 +21,7 @@ type ShowcaseCard = {
   ctaLabel: string;
   reverseOnDesktop?: boolean;
   accentFirst?: boolean;
-  imagePlaceholders: string[];
+  images: string[];
 };
 
 const showcaseCards: ShowcaseCard[] = [
@@ -21,7 +32,7 @@ const showcaseCards: ShowcaseCard[] = [
     description:
       "Get an early edge with orientation sessions, challenge briefs, and expert-led prep talks. This phase helps teams align quickly before the core hackathon starts.",
     ctaLabel: "Know More",
-    imagePlaceholders: ["Pre Summit - Visual 1", "Pre Summit - Visual 2", "Pre Summit - Visual 3"],
+    images: [presummit1, presummit2, presummit3],
   },
   {
     title: "shops",
@@ -32,16 +43,16 @@ const showcaseCards: ShowcaseCard[] = [
     ctaLabel: "Know More",
     reverseOnDesktop: true,
     accentFirst: true,
-    imagePlaceholders: ["Workshop - Visual 1", "Workshop - Visual 2", "Workshop - Visual 3"],
+    images: [workshop1, workshop2, workshop3],
   },
   {
     title: "The Divisions",
     accentWord: "Divisions",
-    subtitle: "9 domain tracks designed for high-impact innovation.",
+    subtitle: "7 domain tracks designed for high-impact innovation.",
     description:
       "Compete in focused categories that mirror real-world problems. Teams can build in domains such as health, education, sustainability, fintech, mobility, and future tech.",
     ctaLabel: "Know More",
-    imagePlaceholders: ["Division - Visual 1", "Division - Visual 2", "Division - Visual 3"],
+    images: [divisions1, divisions2, divisions3],
   },
 ];
 
@@ -56,7 +67,7 @@ const PreScheduleShowcase = () => {
     const interval = setInterval(() => {
       setActiveSlides((prev) =>
         prev.map((index, cardIndex) => {
-          const totalSlides = showcaseCards[cardIndex].imagePlaceholders.length;
+          const totalSlides = showcaseCards[cardIndex].images.length;
           return (index + 1) % totalSlides;
         }),
       );
@@ -110,12 +121,20 @@ const PreScheduleShowcase = () => {
 
               {/* Image slider - second on mobile, alternating position on desktop */}
               <div className={`${isReversed ? "md:order-2" : "md:order-1"} space-y-4`}>
-                <div className="h-[240px] md:h-[260px] rounded-sm bg-gradient-to-br from-[#2f3138] to-[#26282f] border border-white/10 flex items-center justify-center text-white/85 text-sm">
-                  {card.imagePlaceholders[currentSlide]}
+                <div className="h-[240px] md:h-[260px] rounded-sm bg-gradient-to-br from-[#2f3138] to-[#26282f] border border-white/10 flex items-center justify-center overflow-hidden">
+                  <motion.img
+                    key={`${card.title}-${currentSlide}`}
+                    src={card.images[currentSlide]}
+                    alt={`${card.title} visual ${currentSlide + 1}`}
+                    className="w-full h-full object-cover"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4 }}
+                  />
                 </div>
 
                 <div className="flex items-center justify-center gap-2">
-                  {card.imagePlaceholders.map((_, dotIndex) => (
+                  {card.images.map((_, dotIndex) => (
                     <button
                       key={`${card.title}-${dotIndex}`}
                       type="button"

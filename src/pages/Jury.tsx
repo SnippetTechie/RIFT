@@ -1,37 +1,178 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { motion } from "framer-motion";
+
+/**
+ * 💡 HOW TO ADD NEW JURY MEMBERS:
+ * 
+ * 1. Ensure the member's image is in `src/assets/images/jury/` (resolution: 1920x2000).
+ * 2. Import the image at the top of this file:
+ *    `import memberNameImg from "@/assets/images/jury/member-name.png";`
+ * 3. Add a new object to the `juryMembers` array below:
+ *    {
+ *      name: "Full Name",
+ *      role: "Designation",
+ *      image: memberNameImg, // or null if image is not yet available
+ *      linkedin: "https://linkedin.com/in/...",
+ *    },
+ */
+
+// Import images here when they are available in src/assets/images/jury/
+// Example: import sarahImg from "@/assets/images/jury/sarah.png";
+import sample01 from "@/assets/images/jury/sample01.png"
+
+const juryMembers = [
+  {
+    name: "Name",
+    role: "Designation",
+    image: sample01,
+    linkedin: "#",
+  },
+  {
+    name: "Name",
+    role: "Designation",
+    image: null,
+    linkedin: "#",
+  },
+  {
+    name: "Name",
+    role: "Designation",
+    image: null,
+    linkedin: "#",
+  },
+  {
+    name: "Name",
+    role: "Designation",
+    image: null,
+    linkedin: "#",
+  },
+  {
+    name: "Name",
+    role: "Designation",
+    image: null,
+    linkedin: "#",
+  },
+  {
+    name: "Name",
+    role: "Designation",
+    image: null,
+    linkedin: "#",
+  },
+];
 
 const Jury = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main className="py-32">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="section-title mb-8">
-              Meet the <span className="text-primary">Jury</span>
+      <main className="pt-24 md:pt-32 pb-20 md:pb-40">
+        <div className="w-full flex flex-col items-center px-4 md:px-0">
+          {/* Header Section */}
+          <div className="text-center mb-12 md:mb-24 flex flex-col items-center">
+            <h1 className="mx-auto flex items-center justify-center" style={{
+              fontFamily: "'BL Melody SemiBold', sans-serif",
+              fontWeight: 600,
+              fontSize: 'clamp(32px, 6vw, 48px)',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+              textAlign: 'center',
+              minHeight: '58px',
+              opacity: 1
+            }}>
+              The <span className="text-[#0052FF] ml-[0.25em]">Jury</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-12">
-              Industry experts and leaders who will evaluate your innovations.
+            <p className="mx-auto text-muted-foreground opacity-70" style={{
+              fontFamily: "'BL Melody Book', sans-serif",
+              fontWeight: 400,
+              fontSize: 'clamp(18px, 4vw, 24px)',
+              lineHeight: '100%',
+              letterSpacing: '0%',
+              textAlign: 'center',
+              minHeight: '29px',
+              opacity: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              Short Description
             </p>
+          </div>
 
-            {/* TODO: Add jury member cards here */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="border border-border rounded-lg p-6">
-                <div className="w-24 h-24 rounded-full bg-secondary mb-4" />
-                <h3 className="text-xl font-semibold mb-1">Judge Name</h3>
-                <p className="text-sm text-primary mb-2">Title & Company</p>
-                <p className="text-muted-foreground text-sm">
-                  Brief bio placeholder text goes here.
-                </p>
+          {/* Jury Members Grid */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center w-full"
+            style={{
+              maxWidth: '1450px',
+              gap: '40px',
+              opacity: 1
+            }}
+          >
+            {juryMembers.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col group w-full"
+                style={{ maxWidth: '350px' }}
+              >
+                {/* Image Slot - 350x350 Frame */}
+                <div
+                  className="bg-[#E5E5E5] mb-6 overflow-hidden relative w-full aspect-square"
+                  style={{
+                    maxWidth: '350px',
+                    opacity: 1
+                  }}
+                >
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground/20 italic">
+                      {/* Placeholder for minimalist aesthetic */}
+                    </div>
+                  )}
+                </div>
+
+                {/* Info Section */}
+                <div className="w-full" style={{ maxWidth: '350px' }}>
+                  <div className="pb-1 border-b-[1px] border-black mb-2">
+                    <h3 style={{
+                      fontFamily: "'BL Melody Medium', sans-serif",
+                      fontWeight: 500,
+                      fontSize: '32px',
+                      lineHeight: '100%',
+                      letterSpacing: '-0.06em',
+                      textAlign: 'left',
+                      verticalAlign: 'middle',
+                      height: '38px',
+                      opacity: 1,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'flex-start'
+                    }} className="transition-colors group-hover:text-[#0052FF]">
+                      {member.name}
+                    </h3>
+                  </div>
+
+                  <p style={{
+                    fontFamily: "'BL Melody Book', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '100%',
+                    letterSpacing: '-0.06em',
+                    verticalAlign: 'middle',
+                    width: '100%',
+                    maxWidth: '350px',
+                    minHeight: '17px',
+                    opacity: 1,
+                    display: 'flex',
+                    alignItems: 'center'
+                  }} className="text-muted-foreground">
+                    {member.role}
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />
