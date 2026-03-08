@@ -1,7 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
 
 /**
  * 💡 HOW TO ADD NEW JURY MEMBERS:
@@ -68,13 +66,7 @@ const Jury = () => {
       <main className="pt-32 pb-40">
         <div className="w-full flex flex-col items-center">
           {/* Header Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-24 flex flex-col items-center"
-          >
+          <div className="text-center mb-24 flex flex-col items-center">
             <h1 className="mx-auto flex items-center justify-center" style={{
               fontFamily: "'BL Melody SemiBold', sans-serif",
               fontWeight: 600,
@@ -105,10 +97,10 @@ const Jury = () => {
             }}>
               Short Description
             </p>
-          </motion.div>
+          </div>
 
           {/* Jury Members Grid */}
-          <div 
+          <div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center"
             style={{
               width: '1450px',
@@ -119,17 +111,13 @@ const Jury = () => {
             }}
           >
             {juryMembers.map((member, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex flex-col group"
                 style={{ width: '350px' }}
               >
                 {/* Image Slot - 350x350 Frame */}
-                <div 
+                <div
                   className="bg-[#E5E5E5] mb-6 overflow-hidden relative"
                   style={{
                     width: '350px',
@@ -188,7 +176,7 @@ const Jury = () => {
                     {member.role}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
