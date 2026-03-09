@@ -133,6 +133,13 @@ const PreScheduleShowcase = () => {
                     >
                       {card.ctaLabel}
                     </Link>
+                  ) : card.accentWord === "Summit" ? (
+                    <Link
+                      to="/presummit"
+                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                    >
+                      {card.ctaLabel}
+                    </Link>
                   ) : (
                     <button
                       type="button"
@@ -195,6 +202,13 @@ const PreScheduleShowcase = () => {
                   ) : card.accentWord === "Divisions" ? (
                     <Link
                       to="/divisions"
+                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                    >
+                      {card.ctaLabel}
+                    </Link>
+                  ) : card.accentWord === "Summit" ? (
+                    <Link
+                      to="/presummit"
                       className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
                     >
                       {card.ctaLabel}
