@@ -6,30 +6,66 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const DIVISIONS_DATA = [
   {
-    name: "Name",
-    domain: "Domain",
+    name: "Artificial Intelligence",
+    domain: "Machine Learning",
     events: [
-      { time: "09:00 - 10:00", title: "Event Name", description: "This is a detailed description of the event. It can be expanded to show more information about what will happen during this time slot." },
-      { time: "09:00 - 10:00", title: "Event Name", description: "This is another description for a different event. Participants will engage in specific activities outlined here." },
-      { time: "09:00 - 10:00", title: "Event Name", description: "Final event description for this domain. It covers the objectives and outcomes expected for this session." },
+      { time: "CORE FOCUS", title: "Intelligent Systems", description: "Focus on intelligent systems, generative AI, automation, and real-world AI applications." },
     ]
   },
   {
-    name: "Name",
-    domain: "Domain",
+    name: "Cloud Computing",
+    domain: "Infrastructure",
     events: [
-      { time: "09:00 - 10:00", title: "Event Name", description: "Description for the first event in the second domain. Focus on practical implementation and feedback." },
-      { time: "09:00 - 10:00", title: "Event Name", description: "Second event description. Team collaboration and initial prototyping phase." },
-      { time: "09:00 - 10:00", title: "Event Name", description: "Continuing the development work with mentor guidance and technical support." },
+      { time: "CORE FOCUS", title: "Scalable Systems", description: "Build scalable systems using modern cloud platforms, distributed systems, and backend infrastructure." },
     ]
   },
   {
-    name: "Name",
-    domain: "Domain",
+    name: "Cybersecurity",
+    domain: "Digital Trust",
     events: [
-      { time: "09:00 - 10:00", title: "Event Name", description: "Morning session description. Introduction to the domain challenges and resources available." },
-      { time: "09:00 - 10:00", title: "Event Name", description: "Mid-day workshop focused on specific tools and methodologies relevant to this track." },
-      { time: "09:00 - 10:00", title: "Event Name", description: "Evening wrap-up and preparation for the next day's milestones." },
+      { time: "CORE FOCUS", title: "Digital Security", description: "Design secure applications, threat detection systems, and privacy-focused digital solutions." },
+    ]
+  },
+  {
+    name: "Robotics",
+    domain: "Autonomous Systems",
+    events: [
+      { time: "CORE FOCUS", title: "Embedded Innovation", description: "Develop intelligent robotic systems, autonomous navigation solutions, and embedded innovations." },
+    ]
+  },
+  {
+    name: "FinTech",
+    domain: "Digital Economy",
+    events: [
+      { time: "CORE FOCUS", title: "Financial Tech", description: "Create financial technologies that improve digital payments, financial inclusion, and secure transactions." },
+    ]
+  },
+  {
+    name: "Sustainability",
+    domain: "Climate Technology",
+    events: [
+      { time: "CORE FOCUS", title: "Climate Solutions", description: "Build solutions addressing environmental challenges, climate monitoring, and sustainable infrastructure." },
+    ]
+  },
+  {
+    name: "HealthTech",
+    domain: "Bio Innovation",
+    events: [
+      { time: "CORE FOCUS", title: "Healthcare Delivery", description: "Design technologies that improve healthcare delivery, diagnostics, and medical accessibility." },
+    ]
+  },
+  {
+    name: "Game Development",
+    domain: "Interactive Systems",
+    events: [
+      { time: "CORE FOCUS", title: "Immersive Tech", description: "Create immersive digital experiences, games, and interactive simulations using modern game engines." },
+    ]
+  },
+  {
+    name: "Data Science",
+    domain: "Intelligent Systems",
+    events: [
+      { time: "CORE FOCUS", title: "Predictive Analytics", description: "Leverage data analytics, machine learning models, and predictive systems to solve real-world problems." },
     ]
   }
 ];
@@ -154,7 +190,7 @@ export default function Divisions() {
             }}>
               The <span className="text-[#0052FF] ml-[0.25em]">Divisions</span>
             </h1>
-            <p className="text-xl text-gray-600">9 domain Hackathon description</p>
+            <p className="text-xl text-gray-900 font-medium mb-12">Nine specialized technology domains powering the REVA RIFT innovation sprint.</p>
           </div>
 
           {/* Divisions List */}

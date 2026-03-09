@@ -26,20 +26,13 @@ interface TeamMember {
 }
 
 const TEAM_MEMBERS: (TeamMember | null)[] = [
-  /* ── Row 1 ─────────────────────────────────────────── */
-  { name: "SOMESHWAR", designation: "Designation", photo: mainPhoto, linkedin: "#", twitter: "#" },
-  null,   // placeholder
-  null,   // placeholder
-
-  /* ── Row 2 ─────────────────────────────────────────── */
-  null,   // placeholder
-  null,   // placeholder
-  null,   // placeholder
-
-  /* ── Row 3 ─────────────────────────────────────────── */
-  null,   // placeholder
-  null,   // placeholder
-  null,   // placeholder
+  { name: "SHIVANESH", designation: "Finance & Sponsorship", photo: "", linkedin: "#", twitter: "#" },
+  { name: "UDITH", designation: "Technical Team", photo: "", linkedin: "#", twitter: "#" },
+  { name: "SUDHANSHU", designation: "Support Team", photo: "", linkedin: "#", twitter: "#" },
+  { name: "DEVANSHI", designation: "Executive Team", photo: "", linkedin: "#", twitter: "#" },
+  { name: "TANMAY", designation: "Technical Team", photo: "", linkedin: "#", twitter: "#" },
+  { name: "SIMRAN", designation: "Technical Team", photo: "", linkedin: "#", twitter: "#" },
+  { name: "SOMESHWAR", designation: "Design Team", photo: "", linkedin: "#", twitter: "#" },
 ];
 
 function ProfileCard({ member }: { member: TeamMember | null }) {
@@ -57,7 +50,7 @@ function ProfileCard({ member }: { member: TeamMember | null }) {
           </div>
         )}
         <img className="triangle-left" src={bottomTriangle} alt="" aria-hidden="true" draggable={false} />
-        {member && (
+        {member && member.photo && (
           <img className="profile-photo" src={member.photo} alt={member.name} draggable={false} />
         )}
         <img className="triangle-right" src={topTriangle} alt="" aria-hidden="true" draggable={false} />
@@ -93,7 +86,7 @@ export default function Team() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black"></div>
           </div>
 
-          <div className="container max-w-6xl px-4 flex flex-col items-center">
+          <div className="container max-w-7xl px-4 flex flex-col items-center">
             <h2 className="mx-auto flex items-center justify-center text-center" style={{ 
               fontFamily: "'BL Melody SemiBold', sans-serif",
               fontWeight: 600,
@@ -107,36 +100,38 @@ export default function Team() {
             </h2>
 
             {/* Centered Content Blocks without boxes */}
-            <div className="w-full max-w-4xl space-y-16 mt-16">
+            <div className="w-full max-w-none space-y-16 mt-16">
+              <div className="text-center">
+                <p className="text-white/60 text-sm md:text-base font-normal leading-relaxed mx-auto max-w-none">
+                  REVA RIFT 2026 is a global, multi-domain technology festival hosted at REVA University, Bengaluru. It brings together students, innovators, and emerging technologies into a unified ecosystem of learning, collaboration, and innovation. Unlike traditional tech fests that operate as short standalone events, REVA RIFT is designed as a structured five-week innovation journey where ideas evolve through dialogue, learning, experimentation, and competition.
+                </p>
+              </div>
+
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Mission & Vision</h3>
-                <p className="text-white/60 text-sm md:text-base font-normal leading-relaxed mx-auto max-w-3xl">
-                  RIFT is more than just a hackathon; it's a movement towards India's technological self-reliance. 
-                  Our mission is to foster a culture of rapid innovation and problem-solving among the next generation of engineers. 
-                  By bringing together the brightest minds in Bangalore, we aim to bridge the gap between academic theory and real-world impact.
+                <p className="text-white/60 text-sm md:text-base font-normal leading-relaxed mx-auto max-w-none">
+                  REVA RIFT aims to redefine how student innovation events are structured. Its vision is to create a sustainable ecosystem where learning, collaboration, and problem-solving progress together. Through a carefully designed progression—from strategic discussions and workshops to domain-focused hackathons—participants gain the opportunity to transform ideas into real, working solutions that address contemporary technological and societal challenges.
                 </p>
               </div>
 
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Empowering Innovators</h3>
-                <p className="text-white/60 text-sm md:text-base font-normal leading-relaxed mx-auto max-w-3xl">
-                  Through the REVA Group and our diverse network of partners, we provide participants with 
-                  the high-performance environment needed to build, test, and scale tech solutions 
-                  that address national challenges across healthcare, sustainability, and fintech.
+                <p className="text-white/60 text-sm md:text-base font-normal leading-relaxed mx-auto max-w-none">
+                  The event provides participants with a high-performance environment built around mentorship, hands-on learning, and applied problem solving. Expert-led workshops introduce emerging technologies such as generative AI, cloud infrastructure, game development, autonomous systems, and large-scale AI models. These sessions help participants develop practical skills before entering competitive hackathon phases where they build and prototype real solutions.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 pt-8">
                 <div className="text-center">
                   <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Community Driven</h4>
-                  <p className="text-white/60 text-sm font-normal leading-relaxed mx-auto max-w-[280px]">
-                    Organizing with GDG (RIFT) - Empowering local developer communities and fostering collaboration across the ecosystem.
+                  <p className="text-white/60 text-sm font-normal leading-relaxed mx-auto max-w-none">
+                    REVA RIFT thrives on collaboration across student communities, developer groups, and innovation networks. By fostering knowledge sharing, peer learning, and cross-disciplinary collaboration, the event builds a strong community of builders, thinkers, and innovators who work together to explore new technological possibilities.
                   </p>
                 </div>
                 <div className="text-center">
                   <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Strategic Partnerships</h4>
-                  <p className="text-white/60 text-sm font-normal leading-relaxed mx-auto max-w-[280px]">
-                    Collaborating with industry leaders and government bodies to scale India's digital future through technology.
+                  <p className="text-white/60 text-sm font-normal leading-relaxed mx-auto max-w-none">
+                    Through collaboration with industry experts, mentors, and technology leaders, REVA RIFT connects academic innovation with real-world impact. Industry-aligned problem statements, mentorship ecosystems, and structured evaluation frameworks help participants develop solutions that address meaningful challenges and contribute to the broader future of technology and innovation.
                   </p>
                 </div>
               </div>

@@ -192,12 +192,12 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1;
-  font-size: clamp(2rem, 6.5vw, 5.5rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
   text-rendering: optimizeLegibility;
 }
 
 .section-title-cta {
-  font-size: clamp(2.2rem, 7.5vw, 6rem);
+  font-size: clamp(2rem, 5.5vw, 4.5rem);
   line-height: 0.98;
 }
 

@@ -15,10 +15,6 @@ const HeroSection = () => {
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <span className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-primary/80 text-base font-semibold text-foreground hover:border-primary transition-all cursor-default">
-            <Calendar size={16} strokeWidth={2} className="text-primary" />
-            <span>March 08-11, 2026</span>
-          </span>
-          <span className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-primary/80 text-base font-semibold text-foreground hover:border-primary transition-all cursor-default">
             <MapPin size={16} strokeWidth={2} className="text-primary" />
             <span>REVA University, Bangalore</span>
           </span>
@@ -46,25 +42,6 @@ const HeroSection = () => {
           India's digital future.
         </motion.p>
 
-        <motion.div
-          className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-xs md:text-sm text-foreground mt-1"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.65 }}
-        >
-          <div className="flex items-center gap-3">
-            <span>Organized by:</span>
-            <img src={gdgLogo} alt="Organized by" className="h-10 w-auto object-contain" />
-          </div>
-          <div className="flex items-center gap-3">
-            <span>CO-Organized by:</span>
-            <img src={logoFull} alt="Organized by" className="h-5 w-auto object-contain" />
-          </div>
-          <div className="flex items-center gap-3">
-            <span>In Partnership:</span>
-            <img src={logoFull} alt="Organized by" className="h-5 w-auto object-contain" />
-          </div>
-        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div
