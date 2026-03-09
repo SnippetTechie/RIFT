@@ -3,31 +3,43 @@ import Footer from "@/components/layout/Footer";
 
 export default function PreSummit() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
       
-      <main className="pt-32 pb-40">
-        <div className="container max-w-4xl px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
-              Pre <span className="text-[#0052FF]">Summit</span>
-            </h1>
-            <p className="text-xl text-gray-600">Setting the stage for innovation and collaboration.</p>
-          </div>
+      <main className="pt-20 pb-40">
+        {/* Event Image Placeholder */}
+        <section className="w-full h-[60vh] bg-gradient-to-b from-gray-900 to-black flex items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
+          <h3 className="text-xl md:text-2xl font-medium tracking-widest text-white/40 opacity-50 uppercase" style={{ fontFamily: "'Monument Extended', sans-serif" }}>event img</h3>
+        </section>
 
-          <div className="prose prose-lg mx-auto space-y-8 text-gray-700">
-            <p>
-              The RIFT Pre-Summit is a dedicated phase designed to prepare all participants for the high-intensity hackathon ahead. It's a time for orientation, team alignment, and deep diving into the challenge tracks.
-            </p>
-            <p>
-              During this phase, participants will have access to exclusive orientation sessions where the RIFT team and industry experts will provide detailed briefings on the problem statements. It's the perfect opportunity to understand the technical requirements and the impact we're aiming to achieve.
-            </p>
-            <p>
-              Beyond the technical briefings, the Pre-Summit also focuses on community building. We facilitate networking sessions to help solo participants find teammates and for existing teams to strengthen their bonds.
-            </p>
-            <p>
-              Stay tuned for the detailed schedule of the Pre-Summit sessions. We can't wait to see you there!
-            </p>
+        <div className="container max-w-6xl px-4 -mt-10 relative z-10 text-center">
+          {/* Main Title */}
+          <h1 className="mb-24" style={{ 
+            fontFamily: "'Monument Extended', sans-serif",
+            fontWeight: 600,
+            fontSize: 'clamp(32px, 6vw, 56px)',
+            lineHeight: '100%',
+            letterSpacing: '0%'
+          }}>
+            Pre <span className="text-[#0052FF]">Summit</span>
+          </h1>
+
+          {/* Styled Content Blocks from Mockup */}
+          <div className="space-y-6 max-w-6xl mx-auto">
+            {/* Block 1: Narrow Rounded Pill */}
+            <div className="w-full h-14 bg-[#1A1A1A] rounded-full border border-white/5 shadow-2xl" />
+            
+            {/* Block 2: Large Content Area */}
+            <div className="w-full aspect-[21/9] bg-[#1A1A1A] rounded-sm border border-white/5 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-tr from-white/[0.02] to-transparent" />
+            </div>
+
+            {/* Block 3: Narrow Rounded Pill (Spaced) */}
+            <div className="w-full h-14 bg-[#1A1A1A] rounded-full border border-white/5 shadow-2xl mt-16" />
+
+            {/* Block 4: Large Content Area */}
+            <div className="w-full aspect-[21/9] bg-[#1A1A1A] rounded-sm border border-white/5 shadow-2xl" />
           </div>
         </div>
       </main>
