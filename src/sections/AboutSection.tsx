@@ -30,17 +30,14 @@ const AboutSection = () => {
             transition={{ duration: 0.55, delay: 0.1 }}
           >
             <motion.div
-              className="border-2 border-border bg-card p-4 md:p-5 h-full flex items-center justify-center"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              className="h-full"
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             >
               <motion.img
                 src={revaUniversityImage}
                 alt="REVA University"
-                className="w-full h-auto object-contain max-h-80 rounded-sm"
-                whileHover={{ rotateY: 8, rotateX: -5 }}
-                transition={{ duration: 0.4 }}
-                style={{ perspective: "1000px" }}
+                className="w-full h-[260px] md:h-[320px] object-cover rounded-md border border-border/60"
               />
             </motion.div>
           </motion.div>

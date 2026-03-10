@@ -52,13 +52,13 @@ const HeroSection = () => {
         >
           <a
             href="#tracks"
-            className="btn-shine inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity min-w-44"
+            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
           >
             Explore Tracks
           </a>
           <a
             href="#register"
-            className="btn-shine inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity min-w-44"
+            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
           >
             Register
           </a>

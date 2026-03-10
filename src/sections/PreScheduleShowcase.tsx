@@ -121,28 +121,28 @@ const PreScheduleShowcase = () => {
                   {card.accentWord === "Work" ? (
                     <Link
                       to="/workshops"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </Link>
                   ) : card.accentWord === "Divisions" ? (
                     <Link
                       to="/divisions"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </Link>
                   ) : card.accentWord === "Summit" ? (
                     <Link
                       to="/presummit"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </Link>
                   ) : (
                     <button
                       type="button"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </button>
@@ -194,28 +194,28 @@ const PreScheduleShowcase = () => {
                   {card.accentWord === "Work" ? (
                     <Link
                       to="/workshops"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </Link>
                   ) : card.accentWord === "Divisions" ? (
                     <Link
                       to="/divisions"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </Link>
                   ) : card.accentWord === "Summit" ? (
                     <Link
                       to="/presummit"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </Link>
                   ) : (
                     <button
                       type="button"
-                      className="inline-flex items-center rounded-full bg-white text-primary text-xs font-semibold px-5 py-1.5 hover:bg-white/90 transition-colors"
+                      className="btn-shine inline-flex items-center rounded-full text-xs font-semibold px-5 py-1.5 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
                     >
                       {card.ctaLabel}
                     </button>
