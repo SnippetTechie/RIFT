@@ -1,5 +1,6 @@
 import { Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logoFull from "@/assets/logo/2nd_main_3.png";
 import gdgLogo from "@/assets/images/others/gdg-reva-university.webp";
 
@@ -56,12 +57,12 @@ const HeroSection = () => {
           >
             Explore Tracks
           </a>
-          <a
-            href="#register"
+          <Link
+            to="/signup"
             className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
           >
             Register
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

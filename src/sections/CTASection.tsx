@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   const ref = useRef(null);
@@ -26,15 +27,18 @@ const CTASection = () => {
           Join us at REVA University for four days of innovation, collaboration, and impact. 
           Registration is now open.
         </motion.p>
-        <motion.a
-          href="#contact"
-          className="btn-shine inline-flex items-center gap-2 bg-primary text-primary-foreground px-12 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-opacity"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Register Now
-        </motion.a>
+          <Link
+            to="/signup"
+            className="btn-shine inline-flex items-center gap-2 bg-primary text-primary-foreground px-12 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-opacity"
+          >
+            Register Now
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

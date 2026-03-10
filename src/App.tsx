@@ -12,6 +12,7 @@ import Team from "./pages/Team";
 import Workshops from "./pages/Workshops";
 import Divisions from "./pages/Divisions";
 import PreSummit from "./pages/PreSummit";
+import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
@@ -51,6 +52,7 @@ const App = () => {
               <Route path="/workshops" element={<Workshops />} />
               <Route path="/divisions" element={<Divisions />} />
               <Route path="/presummit" element={<PreSummit />} />
+              <Route path="/signup" element={<Signup />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
