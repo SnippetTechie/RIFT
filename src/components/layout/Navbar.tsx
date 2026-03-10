@@ -68,7 +68,16 @@ const Navbar = () => {
       } border-b border-border`}
     >
       <div className="container flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
+        <Link 
+          to="/" 
+          className="flex items-center gap-2"
+          onClick={(e) => {
+            if (isHomePage) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <img src={logoFull} alt="REVA RIFT" className="h-10 md:h-11" />
         </Link>
 
