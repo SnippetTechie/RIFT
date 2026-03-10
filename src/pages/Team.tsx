@@ -92,6 +92,7 @@ export default function Team() {
               fontWeight: 600,
               fontSize: '48px',
               lineHeight: '100%',
+              letterSpacing: '0.05em',
               marginBottom: '64px'
             }}>
               About us

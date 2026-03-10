@@ -52,6 +52,7 @@ export default function Workshops() {
               fontWeight: 600,
               fontSize: '48px',
               lineHeight: '100%',
+              letterSpacing: '0.05em',
               marginBottom: '16px'
             }}>
               <span className="text-[#0052FF]">Work</span>shops
