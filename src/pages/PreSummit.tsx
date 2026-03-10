@@ -1,6 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import eventImage from "@/assets/images/others/event-image.jpg";
+import eventImage from "@/assets/images/others/event-image.webp";
 
 export default function PreSummit() {
   return (
@@ -25,7 +25,7 @@ export default function PreSummit() {
             fontWeight: 600,
             fontSize: 'clamp(32px, 6vw, 56px)',
             lineHeight: '100%',
-            letterSpacing: '0%'
+            letterSpacing: '0.05em'
           }}>
             Pre <span className="text-[#0052FF]">Summit</span>
           </h1>

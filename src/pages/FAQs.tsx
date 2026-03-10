@@ -127,7 +127,6 @@ const FAQs = () => {
               fontWeight: 600,
               fontSize: 'clamp(28px, 6vw, 48px)',
               lineHeight: '100%',
-              letterSpacing: '0%',
               textAlign: 'center',
               width: '100%',
               maxWidth: '973px',
@@ -145,7 +144,6 @@ const FAQs = () => {
               fontWeight: 200,
               fontSize: 'clamp(18px, 4vw, 25px)',
               lineHeight: '100%',
-              letterSpacing: '0%',
               textAlign: 'center',
               width: '100%',
               maxWidth: '973px',
@@ -184,9 +182,8 @@ const FAQs = () => {
                           fontFamily: "'BL Melody Regular', sans-serif",
                           fontWeight: 400,
                           fontSize: '16px',
-                          lineHeight: '100%',
-                          letterSpacing: '0%',
-                          opacity: 1,
+                           lineHeight: '100%',
+                           opacity: 1,
                           display: 'inline-block',
                           textAlign: 'left'
                         }}>

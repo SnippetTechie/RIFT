@@ -3,11 +3,20 @@ import Footer from "@/components/layout/Footer";
 import "./static/Team.css";
 import bottomTriangle from "@/assets/images/team/bottom-triangle.svg";
 import topTriangle from "@/assets/images/team/top-triangle.svg";
-import mainPhoto from "@/assets/images/team/main.png";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import xIcon from "@/assets/icons/x.svg";
-import gdgTeam from "@/assets/images/team/gdg-team.jpeg";
+import gdgTeam from "@/assets/images/team/gdg-team.webp";
 import MarqueeSection from "@/sections/MarqueeSection";
+
+// members images
+import Shivnesh from "@/assets/images/team/shivnesh.png";
+import Udith from "@/assets/images/team/udith.png";
+import Someshwar from "@/assets/images/team/someshwar.png";
+import Simran from "@/assets/images/team/simran.png";
+import Sudhanshu from "@/assets/images/team/sudhanshu.png";
+import Devanshi from "@/assets/images/team/devanshi.png";
+import Tanmay from "@/assets/images/team/tanmay.png";
+import Dhanush from "@/assets/images/team/dhanush.png";
 
 /*
  * ============================================================
@@ -26,13 +35,14 @@ interface TeamMember {
 }
 
 const TEAM_MEMBERS: (TeamMember | null)[] = [
-  { name: "SHIVANESH", designation: "Finance & Sponsorship", photo: "", linkedin: "#", twitter: "#" },
-  { name: "UDITH", designation: "Technical Team", photo: "", linkedin: "#", twitter: "#" },
-  { name: "SUDHANSHU", designation: "Support Team", photo: "", linkedin: "#", twitter: "#" },
-  { name: "DEVANSHI", designation: "Executive Team", photo: "", linkedin: "#", twitter: "#" },
-  { name: "TANMAY", designation: "Technical Team", photo: "", linkedin: "#", twitter: "#" },
-  { name: "SIMRAN", designation: "Technical Team", photo: "", linkedin: "#", twitter: "#" },
-  { name: "SOMESHWAR", designation: "Design Team", photo: "", linkedin: "#", twitter: "#" },
+  { name: "SHIVANESH", designation: "Finance & Sponsorship", photo: Shivnesh, linkedin: "#", twitter: "#" },
+  { name: "UDITH", designation: "Technical Team", photo: Udith, linkedin: "#", twitter: "#" },
+  { name: "SOMESHWAR", designation: "Design Team", photo: Someshwar, linkedin: "#", twitter: "#" },
+  { name: "SIMRAN", designation: "Technical Team", photo: Simran, linkedin: "#", twitter: "#" },
+  { name: "SUDHANSHU", designation: "Support Team", photo: Sudhanshu, linkedin: "#", twitter: "#" },
+  { name: "DEVANSHI", designation: "Executive Team", photo: Devanshi, linkedin: "#", twitter: "#" },
+  { name: "TANMAY", designation: "Technical Team", photo: Tanmay, linkedin: "#", twitter: "#" },
+  { name: "DHANUSH", designation: "Hackathon Production Lead", photo: Dhanush, linkedin: "#", twitter: "#" },
 ];
 
 function ProfileCard({ member }: { member: TeamMember | null }) {
@@ -68,18 +78,16 @@ function ProfileCard({ member }: { member: TeamMember | null }) {
 export default function Team() {
   return (
     <div className="min-h-screen bg-white text-black">
-      {/* Navbar backdrop fix: Ensures the transparent navbar area stays white */}
-      <div className="fixed top-0 left-0 right-0 h-16 bg-white z-[45]" />
       <Navbar />
-      
+
       <main>
         {/* ── About Us Section (Black) ── */}
-        <section className="bg-black text-white pt-16 pb-32">
+        <section className="bg-black text-white pt-0 pb-32">
           {/* Hero Image / Header area - Full width, attached to top and sides */}
           <div className="relative w-full h-[250px] md:h-[450px] mb-12 flex items-center justify-center overflow-hidden">
-            <img 
-              src={gdgTeam} 
-              alt="GDG Team" 
+            <img
+              src={gdgTeam}
+              alt="GDG Team"
               className="absolute inset-0 w-full h-full object-cover opacity-80"
             />
             {/* Solid fade-to-black at the bottom to hide the image edge */}
@@ -87,13 +95,12 @@ export default function Team() {
           </div>
 
           <div className="container max-w-7xl px-4 flex flex-col items-center">
-            <h2 className="mx-auto flex items-center justify-center text-center" style={{ 
-              fontFamily: "'BL Melody SemiBold', sans-serif",
+            <h2 className="mx-auto flex items-center justify-center text-center" style={{
+              fontFamily: "'Monument Extended', sans-serif",
               fontWeight: 600,
               fontSize: '48px',
               lineHeight: '100%',
-              width: '206px',
-              height: '58px',
+              letterSpacing: '0.05em',
               marginBottom: '64px'
             }}>
               About us
@@ -173,7 +180,7 @@ export default function Team() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
