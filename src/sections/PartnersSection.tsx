@@ -6,7 +6,7 @@ const PartnersSection = () => {
       <div className="container max-w-6xl px-4 flex flex-col items-center gap-10">
         <div className="text-center space-y-3">
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[0.05em] leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             <span className="text-white/90">Our </span>

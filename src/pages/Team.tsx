@@ -88,12 +88,11 @@ export default function Team() {
 
           <div className="container max-w-7xl px-4 flex flex-col items-center">
             <h2 className="mx-auto flex items-center justify-center text-center" style={{ 
-              fontFamily: "'BL Melody SemiBold', sans-serif",
+              fontFamily: "'Monument Extended', sans-serif",
               fontWeight: 600,
               fontSize: '48px',
               lineHeight: '100%',
-              width: '206px',
-              height: '58px',
+              letterSpacing: '0.05em',
               marginBottom: '64px'
             }}>
               About us
