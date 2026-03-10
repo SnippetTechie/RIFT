@@ -20,7 +20,7 @@ interface LoaderProps {
 }
 
 /** Max time (ms) before the failsafe auto-dismisses the loader. */
-const FAILSAFE_MS = 6_000;
+const FAILSAFE_MS = 3_500;
 
 const Loader = ({ onLoadingComplete }: LoaderProps) => {
   /** true while the video is still playing; false once it ends (or failsafe fires). */
@@ -95,19 +95,26 @@ const Loader = ({ onLoadingComplete }: LoaderProps) => {
     >
       <motion.div
         initial={{ scale: 1, opacity: 1 }}
-        animate={isRevealing ? { scale: 60 } : { scale: 1 }}
+        animate={
+          isRevealing
+            ? { scale: 25, opacity: 0 }
+            : { scale: 1, opacity: 1 }
+        }
         transition={
           isRevealing
-            ? { duration: 0.8, ease: [0.4, 0, 0.2, 1] }
+            ? { duration: 0.7, ease: [0.4, 0, 0.2, 1] }
             : { duration: 0 }
         }
         onAnimationComplete={() => {
-          if (isRevealing) onLoadingComplete();
+          if (isRevealing) {
+            handleRevealComplete();
+          }
         }}
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          willChange: "transform, opacity",
         }}
       >
         <video
