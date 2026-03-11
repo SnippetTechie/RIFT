@@ -17,6 +17,7 @@ import Sudhanshu from "@/assets/images/team/sudhanshu.png";
 import Devanshi from "@/assets/images/team/devanshi.png";
 import Tanmay from "@/assets/images/team/tanmay.png";
 import Dhanush from "@/assets/images/team/dhanush.png";
+import Vyshnavi from "@/assets/images/team/vyshnavi.png"
 
 /*
  * ============================================================
@@ -43,6 +44,7 @@ const TEAM_MEMBERS: (TeamMember | null)[] = [
   { name: "DEVANSHI", designation: "Executive Team", photo: Devanshi, linkedin: "#", twitter: "#" },
   { name: "TANMAY", designation: "Technical Team", photo: Tanmay, linkedin: "#", twitter: "#" },
   { name: "DHANUSH", designation: "Hackathon Production Lead", photo: Dhanush, linkedin: "#", twitter: "#" },
+  { name: "VYSHNAVI REDDY", designation: "Secretary", photo: Vyshnavi, linkedin: "#", twitter: "#" },
 ];
 
 function ProfileCard({ member }: { member: TeamMember | null }) {
@@ -67,7 +69,9 @@ function ProfileCard({ member }: { member: TeamMember | null }) {
       </div>
       {member && (
         <div className="profile-info">
-          <p className="profile-name">{member.name}</p>
+          <p className={`profile-name ${member.name.length > 12 ? "profile-name--long" : ""}`}>
+            {member.name}
+          </p>
           <p className="profile-designation">{member.designation}</p>
         </div>
       )}
