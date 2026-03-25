@@ -91,7 +91,6 @@ const Navbar = () => {
     }
   };
 
-  const registerLink = { label: "Register", href: "/signup", type: "route" as const };
 
   return (
     <nav
@@ -141,12 +140,6 @@ const Navbar = () => {
               )
             ))}
           </div>
-          <Link
-            to="/signup"
-            className="btn-shine inline-flex items-center justify-center rounded-full text-sm font-semibold px-5 py-2 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
-          >
-            Register
-          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -202,13 +195,6 @@ const Navbar = () => {
               )
             ))}
               </div>
-            <Link
-              to="/signup"
-              onClick={() => setOpen(false)}
-              className="btn-shine mt-4 inline-flex items-center justify-center rounded-full text-base font-semibold px-6 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary w-full max-w-xs"
-            >
-              Register
-            </Link>
             </div>
           </motion.div>
         )}
