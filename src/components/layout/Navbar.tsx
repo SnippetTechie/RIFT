@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logoFull from "@/assets/logo/2nd_main_3.png";
+import logoFull from "@/assets/logo/reva-logo-black.svg";
 
 const navLinks = [
   { label: "About", href: "#about", type: "hash" },
@@ -115,7 +115,7 @@ const Navbar = () => {
             }
           }}
         >
-          <img src={logoFull} alt="REVA RIFT" className="h-11" />
+          <img src={logoFull} alt="REVA RIFT" className="h-9" />
         </Link>
 
         {/* Desktop */}
@@ -214,7 +214,7 @@ const Navbar = () => {
         }
       }}
     >
-      <img src={logoFull} alt="REVA RIFT" className="h-10" />
+      <img src={logoFull} alt="REVA RIFT" className="h-8" />
     </Link>
 
     {/* Mobile-only fixed hamburger — stays visible when navbar hides on scroll */}
