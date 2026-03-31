@@ -7,8 +7,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FAQs from "./pages/FAQs";
-import Jury from "./pages/Jury";
-import Team from "./pages/Team";
+// import Jury from "./pages/Jury";
+// import Team from "./pages/Team";
 import Workshops from "./pages/Workshops";
 import Divisions from "./pages/Divisions";
 import PreSummit from "./pages/PreSummit";
@@ -51,8 +51,8 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/faqs" element={<FAQs />} />
-                <Route path="/jury" element={<Jury />} />
-                <Route path="/team" element={<Team />} />
+                {/* <Route path="/jury" element={<Jury />} />
+                <Route path="/team" element={<Team />} /> */}
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/divisions" element={<Divisions />} />
                 <Route path="/presummit" element={<PreSummit />} />

@@ -28,7 +28,7 @@ const Footer = () => {
               <span>FAQ</span>
               <span className="text-xs">↗</span>
             </Link>
-            <Link
+            {/* <Link
               to="/jury"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
             >
@@ -41,7 +41,16 @@ const Footer = () => {
             >
               <span>Team</span>
               <span className="text-xs">↗</span>
-            </Link>
+            </Link> */}
+            <a
+              href="https://gdg.community.dev/gdg-on-campus-reva-university-bengaluru-india/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
+            >
+              <span>GDGoC Reva University</span>
+              <span className="text-xs">↗</span>
+            </a>
           </div>
         </div>
 
