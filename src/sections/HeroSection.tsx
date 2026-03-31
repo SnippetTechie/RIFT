@@ -1,9 +1,10 @@
-import { Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import naacLogo from "@/assets/logo/naac.svg";
+import revaUniversitySvg from "@/assets/logo/reva-university.svg";
+import revaRiftSvg from "@/assets/logo/reva-rift.svg";
 import logoRift from "@/assets/logo/2nd_main_3.png";
 import logoReva from "@/assets/logo/reva-logo-black.svg";
-import gdgLogo from "@/assets/images/others/gdg-reva-university.webp";
 
 const HeroSection = () => {
   return (
@@ -23,28 +24,41 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 container text-center flex flex-col items-center gap-10 px-4">
-        {/* Date & Location pills */}
+      <div className="relative z-10 container text-center flex flex-col items-center gap-6 px-4 max-w-5xl">
+        {/* University Logos Row */}
+        <motion.div
+           className="flex items-center justify-center gap-8 md:gap-12 mb-2"
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <img src={naacLogo} alt="NAAC A+" className="h-10 md:h-14 w-auto object-contain" />
+          <div className="h-10 md:h-12 w-[1.5px] bg-foreground/20" />
+          <img src={revaUniversitySvg} alt="REVA University" className="h-10 md:h-14 w-auto object-contain" />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap items-center justify-center gap-4"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-4"
         >
-          <span className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-primary/80 text-base font-semibold text-foreground hover:border-primary transition-all cursor-default">
-            <MapPin size={16} strokeWidth={2} className="text-primary" />
-            <span>REVA University, Bangalore</span>
-          </span>
+          <img 
+            src={revaRiftSvg} 
+            alt="REVA RIFT" 
+            style={{ width: '341px', height: '36px' }}
+            className="w-auto object-contain" 
+          />
         </motion.div>
 
         {/* Main heading */}
         <motion.h1
-          className="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-8xl max-w-6xl"
+          className="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-7xl max-w-4xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Build <span className="text-primary">India's</span><br />
+          Build <span className="text-primary italic">India's</span><br />
           Tech Sovereignty
         </motion.h1>
 
