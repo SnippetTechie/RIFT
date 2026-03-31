@@ -74,16 +74,16 @@ const HeroSection = () => {
             Explore Tracks
           </a>
           <Link
-            to="/divisions"
-            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
-          >
-            Explore Competitions
-          </Link>
-          <Link
             to="/workshops"
             className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
           >
             Explore Workshops
+          </Link>
+          <Link
+            to="/events"
+            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-black bg-white text-black transition-all duration-200 hover:bg-black hover:text-white hover:border-black"
+          >
+            Explore Events
           </Link>
         </motion.div>
       </div>

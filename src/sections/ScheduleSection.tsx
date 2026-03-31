@@ -5,7 +5,7 @@ import { ensureGsapPluginsRegistered, prefersReducedMotion } from "@/lib/gsap";
 const phases = [
   {
     day: "PHASE 1",
-    title: "R Summit",
+    title: "R-Summit",
     date: "March 9 to 11",
     description: "Opening ceremony with workshops and networking opportunities. Get to know fellow participants, form teams, and start ideating on your projects.",
     highlights: ["Registration & Check-in", "Opening Keynote", "Team Formation", "Technical Workshops"],
