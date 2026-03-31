@@ -96,11 +96,11 @@ const Navbar = () => {
     <>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 will-change-transform border-border ${
-        visible ? "translate-y-0" : "md:-translate-y-full"
+        "translate-y-0"
       } ${
         scrolled
-          ? "bg-transparent backdrop-blur-[2px] md:border-b md:bg-background/95 md:backdrop-blur-md md:shadow-sm"
-          : "bg-transparent md:bg-background/80 md:backdrop-blur-sm border-b-0 md:border-b"
+          ? "bg-transparent backdrop-blur-[2px]"
+          : "bg-transparent"
       }`}
     >
       <div className="container flex items-center justify-between h-16">
