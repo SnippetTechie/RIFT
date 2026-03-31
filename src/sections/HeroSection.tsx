@@ -1,12 +1,28 @@
 import { Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logoFull from "@/assets/logo/2nd_main_3.png";
+import logoRift from "@/assets/logo/2nd_main_3.png";
+import logoReva from "@/assets/logo/reva-logo-black.svg";
 import gdgLogo from "@/assets/images/others/gdg-reva-university.webp";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20 border-b border-border overflow-hidden">
+      {/* 
+        This logo block is technically in the HeroSection at top-0, 
+        so it perfectly aligns with the Reva logo in the fixed Navbar.
+        When you scroll down, this scrolls away, leaving only the Reva logo.
+      */}
+      <div className="absolute top-0 left-0 right-0 z-[45] pointer-events-none">
+        <div className="container flex items-center h-16">
+          <div className="flex items-center gap-3 md:gap-10">
+            {/* Mirror Reva logo for spacing */}
+            <img src={logoReva} alt="" className="h-8 md:h-9 opacity-0" />
+            <img src={logoRift} alt="Rift Logo" className="h-10 md:h-12" />
+          </div>
+        </div>
+      </div>
+
       <div className="relative z-10 container text-center flex flex-col items-center gap-10 px-4">
         {/* Date & Location pills */}
         <motion.div
@@ -58,16 +74,16 @@ const HeroSection = () => {
             Explore Tracks
           </a>
           <Link
-            to="/divisions"
-            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
-          >
-            Explore Competitions
-          </Link>
-          <Link
             to="/workshops"
             className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
           >
             Explore Workshops
+          </Link>
+          <Link
+            to="/events"
+            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-black bg-white text-black transition-all duration-200 hover:bg-black hover:text-white hover:border-black"
+          >
+            Explore Events
           </Link>
         </motion.div>
       </div>
