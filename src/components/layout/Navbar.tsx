@@ -95,13 +95,13 @@ const Navbar = () => {
   return (
     <>
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 will-change-transform ${
-        visible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 will-change-transform border-border ${
+        visible ? "translate-y-0" : "md:-translate-y-full"
       } ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-background/80 backdrop-blur-sm"
-      } border-b border-border`}
+          ? "bg-transparent backdrop-blur-[2px] md:border-b md:bg-background/95 md:backdrop-blur-md md:shadow-sm"
+          : "bg-transparent md:bg-background/80 md:backdrop-blur-sm border-b-0 md:border-b"
+      }`}
     >
       <div className="container flex items-center justify-between h-16">
         {/* Logo: hidden on mobile (rendered outside nav instead) */}
