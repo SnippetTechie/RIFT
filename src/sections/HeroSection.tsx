@@ -57,8 +57,7 @@ const HeroSection = () => {
             <img 
               src={revaRiftSvg} 
               alt="REVA RIFT" 
-              style={{ width: '341px', height: '36px' }}
-              className="w-auto object-contain" 
+              className="w-[234px] h-[25px] sm:w-[341px] sm:h-[36px] object-contain" 
             />
           </motion.div>
         </div>
@@ -87,7 +86,7 @@ const HeroSection = () => {
         </div>
 
         {/* BLOCK 3: CTA Buttons */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start pt-10">
+        <div className="flex-1 w-full flex flex-col items-center justify-start pt-4">
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
             initial={{ opacity: 0, y: 20 }}
@@ -96,13 +95,13 @@ const HeroSection = () => {
           >
             <Link
               to="/workshops"
-              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm w-60 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
+              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-xs sm:text-sm w-48 sm:w-60 px-8 py-2 sm:py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
             >
               Explore Workshops
             </Link>
             <Link
               to="/events"
-              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm w-60 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
+              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-xs sm:text-sm w-48 sm:w-60 px-8 py-2 sm:py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
             >
               Explore Hackathons
             </Link>
@@ -110,9 +109,9 @@ const HeroSection = () => {
         </div>
 
         {/* BLOCK 4: Organisers & Partners */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start gap-20 pt-0 pb-20">
+        <div className="flex-1 w-full flex flex-col items-center justify-start gap-12 sm:gap-20 pt-0 pb-20">
           <motion.div
-            className="flex flex-col items-center gap-2 -mt-24"
+            className="flex flex-col items-center gap-2 -mt-12 sm:-mt-24"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.9 }}
@@ -121,8 +120,7 @@ const HeroSection = () => {
             <img 
               src={gdgRevaLogo} 
               alt="GDG REVA" 
-              style={{ width: '325px', height: '40px' }}
-              className="w-auto object-contain" 
+              className="w-[200px] h-[25px] sm:w-[325px] sm:h-[40px] object-contain" 
             />
           </motion.div>
 
@@ -133,13 +131,15 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 1.1 }}
           >
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground text-center mb-6">Community Partners:</p>
-            <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-10 w-full px-2">
-              {partners.map((partner) => (
+            <div className="flex flex-nowrap items-center justify-center gap-6 sm:gap-10 w-full px-2">
+              {partners.map((partner, index) => (
                 <img 
                   key={partner.id} 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="h-6 sm:h-8 md:h-10 w-auto object-contain opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" 
+                  className={`w-[100px] h-[40px] rounded-[2px] opacity-100 grayscale-0 sm:h-8 md:h-10 sm:w-auto sm:opacity-40 sm:grayscale object-contain hover:opacity-100 hover:grayscale-0 transition-all duration-300 ${
+                    index === 0 || index === partners.length - 1 ? "hidden sm:block" : "block"
+                  }`} 
                 />
               ))}
             </div>
