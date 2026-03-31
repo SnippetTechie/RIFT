@@ -23,7 +23,8 @@ import SmoothScroll from "./components/layout/SmoothScroll";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const isExactRoot = window.location.pathname === "/" && !window.location.hash;
+  const [isLoading, setIsLoading] = useState(isExactRoot);
 
   return (
     <QueryClientProvider client={queryClient}>
