@@ -62,17 +62,11 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-3 mt-2"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <a
-            href="#tracks"
-            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
-          >
-            Explore Tracks
-          </a>
           <Link
             to="/workshops"
             className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
@@ -81,9 +75,9 @@ const HeroSection = () => {
           </Link>
           <Link
             to="/events"
-            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-black bg-white text-black transition-all duration-200 hover:bg-black hover:text-white hover:border-black"
+            className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
           >
-            Explore Events
+            Explore Hackathons
           </Link>
         </motion.div>
       </div>
