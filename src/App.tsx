@@ -12,8 +12,8 @@ import FAQs from "./pages/FAQs";
 import Workshops from "./pages/Workshops";
 import Divisions from "./pages/Divisions";
 import PreSummit from "./pages/PreSummit";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
+// import Login from "./pages/Login";
 import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
@@ -57,8 +57,8 @@ const App = () => {
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/divisions" element={<Divisions />} />
                 <Route path="/presummit" element={<PreSummit />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
+                {/* <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} /> */}
                 <Route path="/events" element={<Events />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import naacLogo from "@/assets/logo/naac.svg";
 import revaUniversitySvg from "@/assets/logo/reva-university.svg";
 import revaRiftSvg from "@/assets/logo/reva-rift.svg";
-import logoRift from "@/assets/logo/2nd_main_3.png";
-import logoReva from "@/assets/logo/reva-logo-black.svg";
+import logoUniversity from "@/assets/logo/reva-university.svg";
+import logoFull from "@/assets/logo/reva-logo-black.svg";
+import logo2ndMain from "@/assets/logo/2nd_main_3.png";
 import gdgRevaLogo from "@/assets/logo/gdg-reva.svg";
 import partnerSampleLogo from "@/assets/images/partners/sample.svg";
 import MarqueeSection from "./MarqueeSection";
@@ -23,6 +24,17 @@ const HeroSection = () => {
       {/* Background Decor */}
       <div className="relative z-10 container h-full px-4 max-w-7xl mx-auto flex flex-col items-center">
         
+        {/* Navbar-aligned logo (2nd_main_3) - Purely visual, technically in Hero */}
+        <div className="absolute top-0 left-0 right-0 h-16 z-[60] pointer-events-none flex items-center">
+          <div className="container max-w-7xl mx-auto flex items-center px-4">
+            {/* Invisible spacer to match navbar's logo wordmark width */}
+            <img src={logoFull} alt="" className="h-8 md:h-9 opacity-0 invisible" />
+            {/* Exact 2px difference (gap) as requested */}
+            <div className="w-[2px]" />
+            <img src={logo2ndMain} alt="" className="h-11 md:h-14" />
+          </div>
+        </div>
+
         {/* BLOCK 1: University & RIFT Logos */}
         <div className="flex-1 w-full flex flex-col items-center justify-center gap-4 pt-12">
           <motion.div
@@ -84,13 +96,13 @@ const HeroSection = () => {
           >
             <Link
               to="/workshops"
-              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
+              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm w-60 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
             >
               Explore Workshops
             </Link>
             <Link
               to="/events"
-              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm min-w-44 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
+              className="btn-shine inline-flex items-center justify-center rounded-full font-semibold text-sm w-60 px-8 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
             >
               Explore Hackathons
             </Link>
@@ -98,9 +110,9 @@ const HeroSection = () => {
         </div>
 
         {/* BLOCK 4: Organisers & Partners */}
-        <div className="flex-1 w-full flex flex-col items-center justify-start gap-8 pt-0 pb-20">
+        <div className="flex-1 w-full flex flex-col items-center justify-start gap-20 pt-0 pb-20">
           <motion.div
-            className="flex flex-col items-center gap-2"
+            className="flex flex-col items-center gap-2 -mt-24"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.9 }}
@@ -121,13 +133,13 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 1.1 }}
           >
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground text-center mb-6">Community Partners:</p>
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            <div className="flex flex-nowrap items-center justify-center gap-4 md:gap-10 w-full px-2">
               {partners.map((partner) => (
                 <img 
                   key={partner.id} 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="h-8 md:h-10 w-auto object-contain opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" 
+                  className="h-6 sm:h-8 md:h-10 w-auto object-contain opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" 
                 />
               ))}
             </div>
