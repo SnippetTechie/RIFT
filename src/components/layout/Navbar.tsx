@@ -144,9 +144,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle — hidden on mobile (rendered outside nav instead), visible logic on desktop not needed */}
         <button
-          className="md:hidden text-foreground ml-auto"
+          className="hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -216,6 +216,18 @@ const Navbar = () => {
     >
       <img src={logoFull} alt="REVA RIFT" className="h-10" />
     </Link>
+
+    {/* Mobile-only fixed hamburger — stays visible when navbar hides on scroll */}
+    <button
+      className="fixed top-0 right-0 z-50 flex items-center h-16 px-4 md:hidden text-foreground"
+      onClick={() => {
+        if (!visible) setVisible(true);
+        setOpen((prev) => !prev);
+      }}
+      aria-label="Toggle menu"
+    >
+      {open ? <X size={24} /> : <Menu size={24} />}
+    </button>
     </>
   );
 };
