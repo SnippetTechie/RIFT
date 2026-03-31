@@ -93,6 +93,7 @@ const Navbar = () => {
 
 
   return (
+    <>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 will-change-transform ${
         visible ? "translate-y-0" : "-translate-y-full"
@@ -103,9 +104,10 @@ const Navbar = () => {
       } border-b border-border`}
     >
       <div className="container flex items-center justify-between h-16">
+        {/* Logo: hidden on mobile (rendered outside nav instead) */}
         <Link 
           to="/" 
-          className="flex items-center gap-2"
+          className="hidden md:flex items-center gap-2"
           onClick={(e) => {
             if (isHomePage) {
               e.preventDefault();
@@ -113,7 +115,7 @@ const Navbar = () => {
             }
           }}
         >
-          <img src={logoFull} alt="REVA RIFT" className="h-10 md:h-11" />
+          <img src={logoFull} alt="REVA RIFT" className="h-11" />
         </Link>
 
         {/* Desktop */}
@@ -144,7 +146,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground ml-auto"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -200,6 +202,21 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
+
+    {/* Mobile-only fixed logo — lives outside nav so it's never hidden by nav transform */}
+    <Link
+      to="/"
+      className="fixed top-0 left-0 z-50 flex items-center h-16 px-4 md:hidden"
+      onClick={(e) => {
+        if (isHomePage) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }}
+    >
+      <img src={logoFull} alt="REVA RIFT" className="h-10" />
+    </Link>
+    </>
   );
 };
 
