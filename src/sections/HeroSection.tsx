@@ -29,8 +29,8 @@ const HeroSection = () => {
           <div className="container max-w-7xl mx-auto flex items-center px-4">
             {/* Invisible spacer to match navbar's logo wordmark width */}
             <img src={logoFull} alt="" className="h-8 md:h-9 opacity-0 invisible" />
-            {/* Exact 2px difference (gap) as requested */}
-            <div className="w-[2px]" />
+            {/* Adjusted gap on mobile, keeping 2px on desktop */}
+            <div className="w-3 md:w-[2px]" />
             <img src={logo2ndMain} alt="" className="h-11 md:h-14" />
           </div>
         </div>

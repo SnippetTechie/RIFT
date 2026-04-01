@@ -84,10 +84,10 @@ const Footer = () => {
 
       {/* Middle Row */}
       <div className="grid grid-cols-1 md:grid-cols-[25%_50%_25%] border-b border-foreground text-xs text-foreground/75">
-        <div className="border-r border-foreground py-3 flex items-center justify-center text-sm text-foreground/80">
+        <div className="hidden md:flex border-r border-foreground py-3 items-center justify-center text-sm text-foreground/80">
           Contact
         </div>
-        <div className="border-r border-foreground py-3">
+        <div className="md:border-r border-foreground py-3">
           <div className="flex items-center justify-center gap-3 flex-col md:flex-row">
             <div className="flex items-center gap-4 order-1 md:order-2">
               <a
@@ -120,7 +120,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="py-3 flex items-center justify-center text-sm text-foreground/80">
+        <div className="hidden md:flex py-3 items-center justify-center text-sm text-foreground/80">
           Event Regulations
         </div>
       </div>
