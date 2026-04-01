@@ -8,6 +8,8 @@ import logoFull from "@/assets/logo/reva-logo-black.svg";
 import logo2ndMain from "@/assets/logo/2nd_main_3.png";
 import gdgRevaLogo from "@/assets/logo/gdg-reva.svg";
 import partnerSampleLogo from "@/assets/images/partners/sample.svg";
+import vectorTop from "@/assets/elements/vector-top.svg";
+import vectorBottom from "@/assets/elements/vector-bottom.svg";
 import MarqueeSection from "./MarqueeSection";
 
 const partners = [
@@ -20,8 +22,19 @@ const partners = [
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen min-h-[900px] border-b border-border overflow-hidden">
+    <section className="relative h-screen min-h-[900px] border-b border-border overflow-hidden bg-white">
       {/* Background Decor */}
+      <img 
+        src={vectorTop} 
+        alt="" 
+        className="hidden md:block absolute top-0 right-0 w-[35vw] max-w-[600px] object-contain pointer-events-none z-0" 
+      />
+      <img 
+        src={vectorBottom} 
+        alt="" 
+        className="hidden md:block absolute bottom-0 left-0 w-[35vw] max-w-[600px] object-contain pointer-events-none z-0" 
+      />
+
       <div className="relative z-10 container h-full px-4 max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Navbar-aligned logo (2nd_main_3) - Purely visual, technically in Hero */}
