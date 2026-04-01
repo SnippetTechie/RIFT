@@ -29,6 +29,13 @@ const Footer = () => {
               <span>FAQ</span>
               <span className="text-xs">↗</span>
             </Link>
+            <Link
+              to="/sponsorship"
+              className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
+            >
+              <span>Sponsorship</span>
+              <span className="text-xs">↗</span>
+            </Link>
             {/* <Link
               to="/jury"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
@@ -49,7 +56,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
             >
-              <span>GDGoC Reva University</span>
+              <span>GDG on Campus REVA University</span>
               <span className="text-xs">↗</span>
             </a>
           </div>

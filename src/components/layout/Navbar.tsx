@@ -72,7 +72,11 @@ const Navbar = () => {
       setOpen(false);
       // Small delay on mobile to let menu start closing
       setTimeout(() => {
-        navigate(`/${link.href}`);
+        navigate("/");
+        // Delay applying the hash until the homepage has fully mounted and measured heights
+        setTimeout(() => {
+          navigate(`/${link.href}`, { replace: true });
+        }, 400);
       }, open ? 100 : 0);
       return;
     }
@@ -134,7 +138,7 @@ const Navbar = () => {
               ) : (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   onClick={(event) => handleNavClick(event, link)}
                   className="nav-link text-sm font-semibold text-foreground hover:text-primary transition-colors py-1"
                 >
@@ -186,7 +190,7 @@ const Navbar = () => {
               ) : (
                 <motion.a
                   key={link.label}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   onClick={(event) => handleNavClick(event, link)}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
