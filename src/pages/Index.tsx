@@ -23,7 +23,7 @@ const Index = () => {
       {/* <PreScheduleShowcase /> */}
       <EventCards />
 
-      <MarqueeSection />
+      <MarqueeSection invertColors />
       <ScheduleSection />
       <PartnersSection />
       <WhoShouldJoinSection />
