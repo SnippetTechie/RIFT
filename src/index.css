@@ -302,9 +302,9 @@
   animation-play-state: paused;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling handled purely by Lenis JS */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 #about, #schedule, #tracks, #contact {
