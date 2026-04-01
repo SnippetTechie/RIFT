@@ -97,8 +97,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 will-change-transform translate-y-0 ${
         !isHomePage || scrolled
-          ? "bg-white/90 backdrop-blur-md"
-          : "bg-transparent"
+          ? "bg-white/90 backdrop-blur-md border-b border-gray-200"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container flex items-center justify-between h-16">
