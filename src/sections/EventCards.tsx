@@ -86,15 +86,47 @@ const eventsData = [
     id: 2, 
     name: "KATHA Hackathon", 
     description: "Hack2skill", 
-    fullDescription: "A 48-hour coding marathon where innovators and creators build bold prototypes, learn fast, and ship ideas that strengthen our digital future. Work with mentors, meet co-founders, and win amazing prizes.",
+    fullDescription: `KATHA – The Story-Driven Hackathon\n\nWhat if solving real-world problems felt like living a story?\n\nKATHA is a 24-hour immersive, story-driven hackathon where participants step into a narrative world and solve challenges as the story unfolds in real time.\n\nUnlike traditional hackathons, problem statements are not shared beforehand. Instead, the event begins with a live introduction, where volunteers present challenges through a central family narrative. Each problem is revealed on the day of the hackathon, allowing participants to understand real-world situations before building solutions.\n\nEach character represents a key domain:\n     Healthcare (Grandparents)\n     Education (Student – Ram)\n     Agritech & Rural Innovation (Village Officer – Uncle)\n     Public Safety (Mother)\n     Digital Safety (Sister)\n     Assistive AI Tools (Father)\n\nParticipants will experience challenges through these characters and choose a track based on the storyline, enabling deeper understanding and more meaningful innovation.`,
     phase: "Phase I", 
     type: "Hackathons",
-    date: "November 5-7, 2026",
-    time: "48 Hours",
-    venue: "Innovation Center",
-    registrationLink: "#",
+    date: "Mar 23 - Apr 11, 2026",
+    time: "24 Hours",
+    venue: "TBA",
+    registrationLink: "https://vision.hack2skill.com/event/katha-hack",
     image: hackathonB1,
-    delay: 0.2
+    delay: 0.2,
+    timeline: [
+      {
+        title: "Registration",
+        startDate: "23 Mar",
+        endDate: "06 Apr",
+        timeFrame: "23 Mar 26, 11:09 AM - 06 Apr 26, 11:09 AM"
+      },
+      {
+        title: "Team Formation",
+        startDate: "24 Mar",
+        endDate: "03 Apr",
+        timeFrame: "24 Mar 26, 12:00 AM - 03 Apr 26, 11:59 PM"
+      },
+      {
+        title: "Project Submission",
+        startDate: "24 Mar",
+        endDate: "04 Apr",
+        timeFrame: "24 Mar 26, 12:00 AM - 04 Apr 26, 11:59 PM"
+      },
+      {
+        title: "Screening Round",
+        startDate: "05 Apr",
+        endDate: "05 Apr",
+        timeFrame: "05 Apr 26, 12:00 AM - 05 Apr 26, 11:59 PM"
+      },
+      {
+        title: "Hack Day",
+        startDate: "10 Apr",
+        endDate: "11 Apr",
+        timeFrame: "10 Apr 26, 10:00 AM - 11 Apr 26, 12:00 AM"
+      }
+    ]
   },
   { 
     id: 3, 
