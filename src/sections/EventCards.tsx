@@ -239,7 +239,7 @@ const EventCards = ({ hideExploreButton = false }: EventCardsProps) => {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16">
-          {eventsData.map((evt) => (
+          {(hideExploreButton ? eventsData : eventsData.slice(0, 3)).map((evt) => (
             <motion.div 
               key={evt.id}
               onClick={() => setSelectedEvent(evt)}
