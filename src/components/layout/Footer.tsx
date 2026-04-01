@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import revaUniversityLogo from "@/assets/logo/reva-university.png";
-import whatsappIcon from "@/assets/LOGO_TRANSPARENT/whatsapp.png";
-import linkedinIcon from "@/assets/LOGO_TRANSPARENT/linkedin.png";
+import instagramIcon from "@/assets/icons/instagram-blue.svg";
+import linkedinIcon from "@/assets/icons/linkedin-blue.svg";
+import xIcon from "@/assets/icons/x-blue.svg";
 import footerGeometric from "@/assets/LOGO_TRANSPARENT/footer.png";
 
 const Footer = () => {
@@ -94,9 +95,18 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-70 transition-opacity"
-                aria-label="WhatsApp"
+                aria-label="X"
               >
-                <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5 object-contain" />
+                <img src={xIcon} alt="X" className="h-5 w-5 object-contain" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
+                aria-label="Instagram"
+              >
+                <img src={instagramIcon} alt="Instagram" className="h-5 w-5 object-contain" />
               </a>
             </div>
           </div>
