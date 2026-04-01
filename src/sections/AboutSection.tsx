@@ -22,7 +22,7 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-7xl mx-auto items-center px-4 md:px-8">
           <motion.div
             className="w-full"
             initial={{ opacity: 0, y: 24 }}
@@ -48,8 +48,8 @@ const AboutSection = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.2 }}
           >
-            <div className="border border-border bg-background p-6 md:p-8">
-              <h4 className="text-lg md:text-xl font-bold mb-4">What You Will Experience</h4>
+            <div>
+              <h4 className="text-lg md:text-xl font-bold mb-4 relative -top-2 md:-top-4">What You Will Experience</h4>
               <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
                 <li>Industry-aligned real-world problem statements</li>
                 <li>Hands-on workshops on emerging technologies</li>
@@ -57,7 +57,7 @@ const AboutSection = () => {
                 <li>Mentorship from industry experts</li>
               </ul>
             </div>
-            <div className="mt-5 flex justify-center lg:justify-start">
+            <div className="mt-10 md:mt-14 flex justify-center lg:justify-start">
               <motion.a
                 href="#schedule"
                 className="btn-shine inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-2 rounded-full font-semibold text-xs md:text-sm hover:opacity-90 transition-opacity cursor-pointer"
