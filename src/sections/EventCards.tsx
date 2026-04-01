@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, X } from "lucide-react";
+import { X, ChevronRight, MapPin, Calendar, Clock, Link as LinkIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import hackathonA1 from "@/assets/images/event-cards/hackathonA1.webp";
 import hackathonB1 from "@/assets/images/event-cards/hackathonB1.webp";
@@ -81,7 +82,11 @@ const eventsData = [
 
 const filters = ["All", "Workshops", "Hackathons", "Phase I", "Phase II", "Phase III"];
 
-const EventCards = () => {
+interface EventCardsProps {
+  hideExploreButton?: boolean;
+}
+
+const EventCards = ({ hideExploreButton = false }: EventCardsProps) => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
@@ -201,17 +206,19 @@ const EventCards = () => {
         </div>
 
         {/* Explore Button */}
-        <motion.div 
-          className="flex justify-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <button className="btn-shine bg-primary text-primary-foreground font-semibold px-10 py-3 rounded-full hover:bg-background hover:text-primary hover:border-primary border-2 border-primary transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-none">
-            Explore
-          </button>
-        </motion.div>
+        {!hideExploreButton && (
+          <motion.div 
+            className="flex justify-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link to="/events" className="btn-shine bg-primary text-primary-foreground font-semibold px-10 py-3 rounded-full hover:bg-background hover:text-primary hover:border-primary border-2 border-primary transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-none inline-block">
+              Explore
+            </Link>
+          </motion.div>
+        )}
 
       </div>
 
