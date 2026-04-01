@@ -249,7 +249,6 @@
 .marquee-shell {
   position: relative;
   z-index: 40;
-  background: hsl(0 0% 100%);
 }
 
 .marquee-shell::before,
@@ -268,7 +267,6 @@
 .marquee-content {
   position: relative;
   z-index: 2;
-  background: hsl(0 0% 100%);
 }
 
 .dark-section-lines::before {

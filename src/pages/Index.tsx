@@ -4,7 +4,9 @@ import HeroSection from "@/sections/HeroSection";
 import AboutSection from "@/sections/AboutSection";
 import ImpactSection from "@/sections/ImpactSection";
 import MarqueeSection from "@/sections/MarqueeSection";
-import PreScheduleShowcase from "@/sections/PreScheduleShowcase";
+// import PreScheduleShowcase from "@/sections/PreScheduleShowcase";
+import EventCards from "@/sections/EventCards";
+
 import ScheduleSection from "@/sections/ScheduleSection";
 import PartnersSection from "@/sections/PartnersSection";
 import WhoShouldJoinSection from "@/sections/WhoShouldJoinSection";
@@ -18,8 +20,10 @@ const Index = () => {
       <AboutSection />
       <ImpactSection />
       <MarqueeSection />
-      <PreScheduleShowcase />
-      <MarqueeSection />
+      {/* <PreScheduleShowcase /> */}
+      <EventCards />
+
+      <MarqueeSection invertColors />
       <ScheduleSection />
       <PartnersSection />
       <WhoShouldJoinSection />
