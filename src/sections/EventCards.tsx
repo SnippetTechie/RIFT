@@ -132,15 +132,47 @@ const eventsData = [
     id: 3, 
     name: "HACK.ALGO", 
     description: "Hack2skill", 
-    fullDescription: "An exclusive masterclass by industry experts on building at scale. Learn cutting edge technologies, understand architecture design patterns, and get ready for the ultimate developer experience.",
+    fullDescription: `Hack.Algo – REVA Edition is a 24-hour hybrid blockchain hackathon organized by Google Developer Group On Campus REVA University in collaboration with the Algorand Blockchain Club, hosted on Hack2Skill. Designed as a high-intensity innovation sprint, the hackathon brings together top student developers and Web3 builders from across India to create and deploy real-world decentralized applications on the Algorand TestNet.\n\nCentered around Future of Finance and Agentic Commerce, participants work in teams to build production-ready solutions—ranging from DeFi protocols and tokenized asset systems to autonomous, agent-driven transaction frameworks. The hackathon emphasizes end-to-end execution, requiring functional prototypes, smart contract deployment, and scalable system design.\n\nBacked by structured mentorship, rigorous evaluation, and a competitive build environment, Hack.Algo focuses on technical depth, real-world applicability, and ecosystem impact. More than just a hackathon, it is an initiative to accelerate Web3 adoption, empower builders with hands-on blockchain experience, and strengthen the Algorand developer ecosystem at scale.`,
     phase: "Phase II", 
-    type: "Workshops",
-    date: "December 1, 2026",
-    time: "2:00 PM - 6:00 PM",
-    venue: "Virtual Event",
-    registrationLink: "#",
+    type: "Hackathons",
+    date: "Mar 21 - Apr 11, 2026",
+    time: "24 Hours",
+    venue: "Hybrid",
+    registrationLink: "https://vision.hack2skill.com/event/hack-algo",
     image: hackathonC1,
-    delay: 0.3
+    delay: 0.3,
+    timeline: [
+      {
+        title: "Registration",
+        startDate: "21 Mar",
+        endDate: "05 Apr",
+        timeFrame: "21 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Team Formation",
+        startDate: "21 Mar",
+        endDate: "05 Apr",
+        timeFrame: "21 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Project Submission",
+        startDate: "23 Mar",
+        endDate: "05 Apr",
+        timeFrame: "23 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Screening: Result Announcement",
+        startDate: "06 Apr",
+        endDate: "07 Apr",
+        timeFrame: "06 Apr 26, 10:00 AM - 07 Apr 26, 10:00 AM"
+      },
+      {
+        title: "Finale",
+        startDate: "10 Apr",
+        endDate: "11 Apr",
+        timeFrame: "10 Apr 26, 09:00 AM - 11 Apr 26, 04:00 PM"
+      }
+    ]
   },
   { 
     id: 4, 
