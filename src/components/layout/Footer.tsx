@@ -76,8 +76,10 @@ const Footer = () => {
       </div>
 
       {/* Middle Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 border-b border-foreground text-xs text-foreground/75">
-        <div className="border-r border-foreground py-3 text-center"></div>
+      <div className="grid grid-cols-1 md:grid-cols-[25%_50%_25%] border-b border-foreground text-xs text-foreground/75">
+        <div className="border-r border-foreground py-3 flex items-center justify-center text-sm text-foreground/80">
+          Contact
+        </div>
         <div className="border-r border-foreground py-3">
           <div className="flex items-center justify-center gap-3 flex-col md:flex-row">
             <div className="flex items-center gap-4 order-1 md:order-2">
@@ -111,11 +113,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="py-3 text-center"></div>
+        <div className="py-3 flex items-center justify-center text-sm text-foreground/80">
+          Event Regulations
+        </div>
       </div>
 
       {/* Bottom Row */}
-      <div className="py-2.5 text-center text-xs text-foreground/65">@{new Date().getFullYear()} REVARIFT</div>
+      <div className="py-2.5 text-center text-xs text-foreground/65">@{new Date().getFullYear()} REVA Rift</div>
     </footer>
   );
 };
