@@ -78,6 +78,90 @@ const eventsData = [
     image: hackathonC1,
     delay: 0.3
   },
+  { 
+    id: 4, 
+    name: "React Performance Tuning", 
+    description: "Short Description", 
+    fullDescription: "Join us for an exciting deep dive into the latest technologies. This event will cover everything from foundational concepts to advanced practical applications. Perfect for all skill levels wanting to get hands-on experience.",
+    phase: "Phase I", 
+    type: "Workshops",
+    date: "October 20, 2026",
+    time: "10:00 AM - 4:00 PM",
+    venue: "Main Auditorium",
+    registrationLink: "#",
+    image: hackathonA1,
+    delay: 0.4
+  },
+  { 
+    id: 5, 
+    name: "Global Web3 Hackathon", 
+    description: "Short Description", 
+    fullDescription: "A 48-hour coding marathon where innovators and creators build bold prototypes, learn fast, and ship ideas that strengthen our digital future. Work with mentors, meet co-founders, and win amazing prizes.",
+    phase: "Phase II", 
+    type: "Hackathons",
+    date: "November 10-12, 2026",
+    time: "48 Hours",
+    venue: "Innovation Center",
+    registrationLink: "#",
+    image: hackathonB1,
+    delay: 0.5
+  },
+  { 
+    id: 6, 
+    name: "AI & Machine Learning", 
+    description: "Short Description", 
+    fullDescription: "An exclusive masterclass by industry experts on building at scale. Learn cutting edge technologies, understand architecture design patterns, and get ready for the ultimate developer experience.",
+    phase: "Phase III", 
+    type: "Workshops",
+    date: "December 5, 2026",
+    time: "2:00 PM - 6:00 PM",
+    venue: "Virtual Event",
+    registrationLink: "#",
+    image: hackathonC1,
+    delay: 0.6
+  },
+  { 
+    id: 7, 
+    name: "Cloud Architecture Base", 
+    description: "Short Description", 
+    fullDescription: "Join us for an exciting deep dive into the latest technologies. This event will cover everything from foundational concepts to advanced practical applications. Perfect for all skill levels wanting to get hands-on experience.",
+    phase: "Phase I", 
+    type: "Workshops",
+    date: "October 25, 2026",
+    time: "10:00 AM - 4:00 PM",
+    venue: "Main Auditorium",
+    registrationLink: "#",
+    image: hackathonA1,
+    delay: 0.7
+  },
+  { 
+    id: 8, 
+    name: "Cybersecurity Capture", 
+    description: "Short Description", 
+    fullDescription: "A 48-hour coding marathon where innovators and creators build bold prototypes, learn fast, and ship ideas that strengthen our digital future. Work with mentors, meet co-founders, and win amazing prizes.",
+    phase: "Phase III", 
+    type: "Hackathons",
+    date: "November 20-22, 2026",
+    time: "48 Hours",
+    venue: "Innovation Center",
+    registrationLink: "#",
+    image: hackathonB1,
+    delay: 0.8
+  },
+  { 
+    id: 9, 
+    name: "DevOps Best Practices", 
+    description: "Short Description", 
+    fullDescription: "An exclusive masterclass by industry experts on building at scale. Learn cutting edge technologies, understand architecture design patterns, and get ready for the ultimate developer experience.",
+    phase: "Phase II", 
+    type: "Workshops",
+    date: "December 10, 2026",
+    time: "2:00 PM - 6:00 PM",
+    venue: "Virtual Event",
+    registrationLink: "#",
+    image: hackathonC1,
+    delay: 0.9
+  },
 ];
 
 const filters = ["All", "Workshops", "Hackathons", "Phase I", "Phase II", "Phase III"];
@@ -154,7 +238,7 @@ const EventCards = ({ hideExploreButton = false }: EventCardsProps) => {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16">
           {eventsData.map((evt) => (
             <motion.div 
               key={evt.id}
