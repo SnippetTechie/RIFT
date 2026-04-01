@@ -29,8 +29,8 @@ const HeroSection = () => {
           <div className="container max-w-7xl mx-auto flex items-center px-4">
             {/* Invisible spacer to match navbar's logo wordmark width */}
             <img src={logoFull} alt="" className="h-8 md:h-9 opacity-0 invisible" />
-            {/* Exact 2px difference (gap) as requested */}
-            <div className="w-[2px]" />
+            {/* Adjusted gap on mobile, keeping 2px on desktop */}
+            <div className="w-3 md:w-[2px]" />
             <img src={logo2ndMain} alt="" className="h-11 md:h-14" />
           </div>
         </div>
@@ -44,7 +44,7 @@ const HeroSection = () => {
              transition={{ duration: 0.6, delay: 0.1 }}
           >
             <img src={naacLogo} alt="NAAC A+" className="h-8 md:h-12 w-auto object-contain" />
-            <div className="h-8 md:h-10 w-[1.5px] bg-foreground/20" />
+            <div className="h-8 md:h-10 w-[1.5px] invisible" />
             <img src={revaUniversitySvg} alt="REVA University" className="h-8 md:h-12 w-auto object-contain" />
           </motion.div>
 

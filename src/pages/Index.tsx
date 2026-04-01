@@ -8,7 +8,7 @@ import MarqueeSection from "@/sections/MarqueeSection";
 import EventCards from "@/sections/EventCards";
 
 import ScheduleSection from "@/sections/ScheduleSection";
-import PartnersSection from "@/sections/PartnersSection";
+// import PartnersSection from "@/sections/PartnersSection";
 import WhoShouldJoinSection from "@/sections/WhoShouldJoinSection";
 import CTASection from "@/sections/CTASection";
 
@@ -25,9 +25,11 @@ const Index = () => {
 
       <MarqueeSection invertColors />
       <ScheduleSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
+      <MarqueeSection />
       <WhoShouldJoinSection />
-      <CTASection />
+      <div className="h-16 md:h-24" /> {/* Blank space requested */}
+      {/*<CTASection />*/}
       <Footer />
     </div>
   );

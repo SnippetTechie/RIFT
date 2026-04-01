@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import revaUniversityLogo from "@/assets/logo/reva-university.png";
-import whatsappIcon from "@/assets/LOGO_TRANSPARENT/whatsapp.png";
-import linkedinIcon from "@/assets/LOGO_TRANSPARENT/linkedin.png";
+import instagramIcon from "@/assets/icons/instagram-blue.svg";
+import linkedinIcon from "@/assets/icons/linkedin-blue.svg";
+import xIcon from "@/assets/icons/x-blue.svg";
 import footerGeometric from "@/assets/LOGO_TRANSPARENT/footer.png";
 
 const Footer = () => {
@@ -28,6 +29,13 @@ const Footer = () => {
               <span>FAQ</span>
               <span className="text-xs">↗</span>
             </Link>
+            <Link
+              to="/sponsorship"
+              className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
+            >
+              <span>Sponsorship</span>
+              <span className="text-xs">↗</span>
+            </Link>
             {/* <Link
               to="/jury"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
@@ -48,7 +56,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-between border-b border-foreground py-2 hover:text-primary transition-colors"
             >
-              <span>GDGoC Reva University</span>
+              <span>GDG on Campus REVA University</span>
               <span className="text-xs">↗</span>
             </a>
           </div>
@@ -75,9 +83,11 @@ const Footer = () => {
       </div>
 
       {/* Middle Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 border-b border-foreground text-xs text-foreground/75">
-        <div className="border-r border-foreground py-3 text-center"></div>
-        <div className="border-r border-foreground py-3">
+      <div className="grid grid-cols-1 md:grid-cols-[25%_50%_25%] border-b border-foreground text-xs text-foreground/75">
+        <div className="hidden md:flex border-r border-foreground py-3 items-center justify-center text-sm text-foreground/80">
+          Contact
+        </div>
+        <div className="md:border-r border-foreground py-3">
           <div className="flex items-center justify-center gap-3 flex-col md:flex-row">
             <div className="flex items-center gap-4 order-1 md:order-2">
               <a
@@ -94,18 +104,29 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-70 transition-opacity"
-                aria-label="WhatsApp"
+                aria-label="X"
               >
-                <img src={whatsappIcon} alt="WhatsApp" className="h-5 w-5 object-contain" />
+                <img src={xIcon} alt="X" className="h-5 w-5 object-contain" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
+                aria-label="Instagram"
+              >
+                <img src={instagramIcon} alt="Instagram" className="h-5 w-5 object-contain" />
               </a>
             </div>
           </div>
         </div>
-        <div className="py-3 text-center"></div>
+        <div className="hidden md:flex py-3 items-center justify-center text-sm text-foreground/80">
+          Event Regulations
+        </div>
       </div>
 
       {/* Bottom Row */}
-      <div className="py-2.5 text-center text-xs text-foreground/65">@{new Date().getFullYear()} REVARIFT</div>
+      <div className="py-2.5 text-center text-xs text-foreground/65">@{new Date().getFullYear()} REVA Rift</div>
     </footer>
   );
 };

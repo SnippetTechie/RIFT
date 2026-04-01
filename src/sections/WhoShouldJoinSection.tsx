@@ -55,7 +55,7 @@ const WhoShouldJoinSection = () => {
       {/* Roles marquee - row 1 */}
       <div ref={marqueeRef} className="marquee-shell border-y border-foreground/30 overflow-hidden">
         <div className="marquee-content">
-          <div className="py-4">
+          <div className="py-8 md:py-10">
             <div className="flex animate-marquee">
               <div className="flex items-center shrink-0">{renderRoles()}</div>
               <div className="flex items-center shrink-0">{renderRoles()}</div>

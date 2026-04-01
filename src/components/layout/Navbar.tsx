@@ -6,6 +6,7 @@ import logoFull from "@/assets/logo/reva-logo-black.svg";
 
 const navLinks = [
   { label: "About", href: "#about", type: "hash" },
+  { label: "Events", href: "/events", type: "route" },
   { label: "Schedule", href: "#schedule", type: "hash" },
   { label: "Contact", href: "#contact", type: "hash" },
 ];
@@ -71,7 +72,11 @@ const Navbar = () => {
       setOpen(false);
       // Small delay on mobile to let menu start closing
       setTimeout(() => {
-        navigate(`/${link.href}`);
+        navigate("/");
+        // Delay applying the hash until the homepage has fully mounted and measured heights
+        setTimeout(() => {
+          navigate(`/${link.href}`, { replace: true });
+        }, 400);
       }, open ? 100 : 0);
       return;
     }
@@ -96,9 +101,11 @@ const Navbar = () => {
     <>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 will-change-transform translate-y-0 ${
-        !isHomePage || scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-gray-200"
-          : "bg-transparent border-b border-transparent"
+        isHomePage && !scrolled
+          ? "bg-transparent border-b border-transparent"
+          : !isHomePage && !scrolled
+          ? "bg-white"
+          : "bg-white/90 backdrop-blur-md border-b border-gray-200"
       }`}
     >
       <div className="container flex items-center justify-between h-16">
@@ -131,7 +138,7 @@ const Navbar = () => {
               ) : (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   onClick={(event) => handleNavClick(event, link)}
                   className="nav-link text-sm font-semibold text-foreground hover:text-primary transition-colors py-1"
                 >
@@ -183,7 +190,7 @@ const Navbar = () => {
               ) : (
                 <motion.a
                   key={link.label}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   onClick={(event) => handleNavClick(event, link)}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
