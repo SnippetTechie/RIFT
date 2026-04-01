@@ -44,7 +44,7 @@ const HeroSection = () => {
              transition={{ duration: 0.6, delay: 0.1 }}
           >
             <img src={naacLogo} alt="NAAC A+" className="h-8 md:h-12 w-auto object-contain" />
-            <div className="h-8 md:h-10 w-[1.5px] bg-foreground/20" />
+            <div className="h-8 md:h-10 w-[1.5px] invisible" />
             <img src={revaUniversitySvg} alt="REVA University" className="h-8 md:h-12 w-auto object-contain" />
           </motion.div>
 
