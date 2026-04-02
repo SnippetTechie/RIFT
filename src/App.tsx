@@ -7,13 +7,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FAQs from "./pages/FAQs";
-import Jury from "./pages/Jury";
-import Team from "./pages/Team";
+// import Jury from "./pages/Jury";
+// import Team from "./pages/Team";
 import Workshops from "./pages/Workshops";
 import Divisions from "./pages/Divisions";
 import PreSummit from "./pages/PreSummit";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
+// import Login from "./pages/Login";
+import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
@@ -23,7 +24,8 @@ import SmoothScroll from "./components/layout/SmoothScroll";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const isExactRoot = window.location.pathname === "/" && !window.location.hash;
+  const [isLoading, setIsLoading] = useState(isExactRoot);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -50,13 +52,14 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/faqs" element={<FAQs />} />
-                <Route path="/jury" element={<Jury />} />
-                <Route path="/team" element={<Team />} />
+                {/* <Route path="/jury" element={<Jury />} />
+                <Route path="/team" element={<Team />} /> */}
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/divisions" element={<Divisions />} />
                 <Route path="/presummit" element={<PreSummit />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
+                {/* <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} /> */}
+                <Route path="/events" element={<Events />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </SmoothScroll>

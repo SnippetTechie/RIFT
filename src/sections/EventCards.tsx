@@ -1,0 +1,528 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronRight, MapPin, Calendar, Clock, Link as LinkIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import hackathonA1 from "@/assets/images/event-cards/hackathonA1.webp";
+import hackathonB1 from "@/assets/images/event-cards/hackathonB1.webp";
+import hackathonC1 from "@/assets/images/event-cards/hackathonC1.webp";
+
+/**
+ * ============================================================================
+ * HOW TO ADD A NEW EVENT CARD (MANUALLY):
+ * ============================================================================
+ * 1. If you have a new image, import it at the top of this file.
+ *    Example: import myNewImage from "@/assets/images/event-cards/new.webp";
+ * 
+ * 2. Add a new object to the `eventsData` array below.
+ * 
+ * 3. Required Object Fields:
+ *    - id              : Unique number (e.g., 4, 5, 6...).
+ *    - name            : Title of the event (shown on card and modal).
+ *    - description     : Short text for the card preview.
+ *    - fullDescription : Detailed text shown ONLY inside the popup modal.
+ *    - phase           : Which phase it belongs to (e.g., "Phase I", "Phase II"). Also acts as a filter.
+ *    - type            : Category (e.g., "Workshops" or "Hackathons"). Also acts as a filter.
+ *    - image           : The imported image variable (e.g., myNewImage).
+ * 
+ * 4. Optional Modal Fields (Displayed inside the popup):
+ *    - date            : Event date (e.g., "October 15, 2026").
+ *    - time            : Start/End time or duration (e.g., "10:00 AM - 4:00 PM").
+ *    - venue           : Location of the event (e.g., "Main Auditorium").
+ *    - registrationLink: The URL where users can register (e.g., Google form or Devfolio link).
+ * 
+ * 5. Animation field:
+ *    - delay           : Stagger animation delay. Increase by 0.1 for each new card (e.g., 0.4, 0.5...).
+ * ============================================================================
+ */
+const eventsData = [
+  { 
+    id: 1, 
+    name: "AINEX – AI Tech Challenge", 
+    description: "Hack2skill", 
+    fullDescription: `What if technology blended into the environment instead of demanding attention through screens?\n\nThis track focuses on building ambient AI systems that interact naturally using voice, vision, and real-world sensors. The aim is to create seamless, hands-free experiences where machines understand and respond like humans do — in real time.\n\nParticipants will develop systems that see, listen, and react intelligently, enabling intuitive human-AI interaction without traditional UI.`,
+    phase: "Phase I", 
+    type: "Hackathons",
+    date: "Mar 21 - Apr 11, 2026",
+    time: "Ongoing",
+    venue: "TBA",
+    registrationLink: "https://vision.hack2skill.com/event/ainex-hack",
+    image: hackathonA1,
+    delay: 0.1,
+    timeline: [
+      {
+        title: "Registration",
+        startDate: "21 Mar",
+        endDate: "05 Apr",
+        timeFrame: "21 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Project Submission",
+        startDate: "23 Mar",
+        endDate: "05 Apr",
+        timeFrame: "23 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Team Formation",
+        startDate: "28 Mar",
+        endDate: "05 Apr",
+        timeFrame: "28 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Screening: Result Announcement",
+        startDate: "08 Apr",
+        endDate: "08 Apr",
+        timeFrame: "08 Apr 26, 08:00 AM - 08 Apr 26, 08:00 PM"
+      },
+      {
+        title: "Finale",
+        startDate: "10 Apr",
+        endDate: "11 Apr",
+        timeFrame: "10 Apr 26, 09:00 AM - 11 Apr 26, 04:00 PM"
+      }
+    ]
+  },
+  { 
+    id: 2, 
+    name: "KATHA Hackathon", 
+    description: "Hack2skill", 
+    fullDescription: `KATHA – The Story-Driven Hackathon\n\nWhat if solving real-world problems felt like living a story?\n\nKATHA is a 24-hour immersive, story-driven hackathon where participants step into a narrative world and solve challenges as the story unfolds in real time.\n\nUnlike traditional hackathons, problem statements are not shared beforehand. Instead, the event begins with a live introduction, where volunteers present challenges through a central family narrative. Each problem is revealed on the day of the hackathon, allowing participants to understand real-world situations before building solutions.\n\nEach character represents a key domain:\n     Healthcare (Grandparents)\n     Education (Student – Ram)\n     Agritech & Rural Innovation (Village Officer – Uncle)\n     Public Safety (Mother)\n     Digital Safety (Sister)\n     Assistive AI Tools (Father)\n\nParticipants will experience challenges through these characters and choose a track based on the storyline, enabling deeper understanding and more meaningful innovation.`,
+    phase: "Phase I", 
+    type: "Hackathons",
+    date: "Mar 23 - Apr 11, 2026",
+    time: "24 Hours",
+    venue: "TBA",
+    registrationLink: "https://vision.hack2skill.com/event/katha-hack",
+    image: hackathonB1,
+    delay: 0.2,
+    timeline: [
+      {
+        title: "Registration",
+        startDate: "23 Mar",
+        endDate: "06 Apr",
+        timeFrame: "23 Mar 26, 11:09 AM - 06 Apr 26, 11:09 AM"
+      },
+      {
+        title: "Team Formation",
+        startDate: "24 Mar",
+        endDate: "03 Apr",
+        timeFrame: "24 Mar 26, 12:00 AM - 03 Apr 26, 11:59 PM"
+      },
+      {
+        title: "Project Submission",
+        startDate: "24 Mar",
+        endDate: "04 Apr",
+        timeFrame: "24 Mar 26, 12:00 AM - 04 Apr 26, 11:59 PM"
+      },
+      {
+        title: "Screening Round",
+        startDate: "05 Apr",
+        endDate: "05 Apr",
+        timeFrame: "05 Apr 26, 12:00 AM - 05 Apr 26, 11:59 PM"
+      },
+      {
+        title: "Hack Day",
+        startDate: "10 Apr",
+        endDate: "11 Apr",
+        timeFrame: "10 Apr 26, 10:00 AM - 11 Apr 26, 12:00 AM"
+      }
+    ]
+  },
+  { 
+    id: 3, 
+    name: "HACK.ALGO", 
+    description: "Hack2skill", 
+    fullDescription: `Hack.Algo – REVA Edition is a 24-hour hybrid blockchain hackathon organized by Google Developer Group On Campus REVA University in collaboration with the Algorand Blockchain Club, hosted on Hack2Skill. Designed as a high-intensity innovation sprint, the hackathon brings together top student developers and Web3 builders from across India to create and deploy real-world decentralized applications on the Algorand TestNet.\n\nCentered around Future of Finance and Agentic Commerce, participants work in teams to build production-ready solutions—ranging from DeFi protocols and tokenized asset systems to autonomous, agent-driven transaction frameworks. The hackathon emphasizes end-to-end execution, requiring functional prototypes, smart contract deployment, and scalable system design.\n\nBacked by structured mentorship, rigorous evaluation, and a competitive build environment, Hack.Algo focuses on technical depth, real-world applicability, and ecosystem impact. More than just a hackathon, it is an initiative to accelerate Web3 adoption, empower builders with hands-on blockchain experience, and strengthen the Algorand developer ecosystem at scale.`,
+    phase: "Phase II", 
+    type: "Hackathons",
+    date: "Mar 21 - Apr 11, 2026",
+    time: "24 Hours",
+    venue: "Hybrid",
+    registrationLink: "https://vision.hack2skill.com/event/hack-algo",
+    image: hackathonC1,
+    delay: 0.3,
+    timeline: [
+      {
+        title: "Registration",
+        startDate: "21 Mar",
+        endDate: "05 Apr",
+        timeFrame: "21 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Team Formation",
+        startDate: "21 Mar",
+        endDate: "05 Apr",
+        timeFrame: "21 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Project Submission",
+        startDate: "23 Mar",
+        endDate: "05 Apr",
+        timeFrame: "23 Mar 26, 10:57 AM - 05 Apr 26, 10:57 AM"
+      },
+      {
+        title: "Screening: Result Announcement",
+        startDate: "06 Apr",
+        endDate: "07 Apr",
+        timeFrame: "06 Apr 26, 10:00 AM - 07 Apr 26, 10:00 AM"
+      },
+      {
+        title: "Finale",
+        startDate: "10 Apr",
+        endDate: "11 Apr",
+        timeFrame: "10 Apr 26, 09:00 AM - 11 Apr 26, 04:00 PM"
+      }
+    ]
+  },
+  { 
+    id: 4, 
+    name: "React Performance Tuning", 
+    description: "Short Description", 
+    fullDescription: "Join us for an exciting deep dive into the latest technologies. This event will cover everything from foundational concepts to advanced practical applications. Perfect for all skill levels wanting to get hands-on experience.",
+    phase: "Phase I", 
+    type: "Workshops",
+    date: "October 20, 2026",
+    time: "10:00 AM - 4:00 PM",
+    venue: "Main Auditorium",
+    registrationLink: "#",
+    image: hackathonA1,
+    delay: 0.4
+  },
+  { 
+    id: 5, 
+    name: "Global Web3 Hackathon", 
+    description: "Short Description", 
+    fullDescription: "A 48-hour coding marathon where innovators and creators build bold prototypes, learn fast, and ship ideas that strengthen our digital future. Work with mentors, meet co-founders, and win amazing prizes.",
+    phase: "Phase II", 
+    type: "Hackathons",
+    date: "November 10-12, 2026",
+    time: "48 Hours",
+    venue: "Innovation Center",
+    registrationLink: "#",
+    image: hackathonB1,
+    delay: 0.5
+  },
+  { 
+    id: 6, 
+    name: "AI & Machine Learning", 
+    description: "Short Description", 
+    fullDescription: "An exclusive masterclass by industry experts on building at scale. Learn cutting edge technologies, understand architecture design patterns, and get ready for the ultimate developer experience.",
+    phase: "Phase III", 
+    type: "Workshops",
+    date: "December 5, 2026",
+    time: "2:00 PM - 6:00 PM",
+    venue: "Virtual Event",
+    registrationLink: "#",
+    image: hackathonC1,
+    delay: 0.6
+  },
+  { 
+    id: 7, 
+    name: "Cloud Architecture Base", 
+    description: "Short Description", 
+    fullDescription: "Join us for an exciting deep dive into the latest technologies. This event will cover everything from foundational concepts to advanced practical applications. Perfect for all skill levels wanting to get hands-on experience.",
+    phase: "Phase I", 
+    type: "Workshops",
+    date: "October 25, 2026",
+    time: "10:00 AM - 4:00 PM",
+    venue: "Main Auditorium",
+    registrationLink: "#",
+    image: hackathonA1,
+    delay: 0.7
+  },
+  { 
+    id: 8, 
+    name: "Cybersecurity Capture", 
+    description: "Short Description", 
+    fullDescription: "A 48-hour coding marathon where innovators and creators build bold prototypes, learn fast, and ship ideas that strengthen our digital future. Work with mentors, meet co-founders, and win amazing prizes.",
+    phase: "Phase III", 
+    type: "Hackathons",
+    date: "November 20-22, 2026",
+    time: "48 Hours",
+    venue: "Innovation Center",
+    registrationLink: "#",
+    image: hackathonB1,
+    delay: 0.8
+  },
+  { 
+    id: 9, 
+    name: "DevOps Best Practices", 
+    description: "Short Description", 
+    fullDescription: "An exclusive masterclass by industry experts on building at scale. Learn cutting edge technologies, understand architecture design patterns, and get ready for the ultimate developer experience.",
+    phase: "Phase II", 
+    type: "Workshops",
+    date: "December 10, 2026",
+    time: "2:00 PM - 6:00 PM",
+    venue: "Virtual Event",
+    registrationLink: "#",
+    image: hackathonC1,
+    delay: 0.9
+  },
+];
+
+const filters = ["All", "Workshops", "Hackathons", "Phase I", "Phase II", "Phase III"];
+
+interface EventCardsProps {
+  hideExploreButton?: boolean;
+}
+
+const EventCards = ({ hideExploreButton = false }: EventCardsProps) => {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (selectedEvent) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedEvent]);
+
+  const closeModal = () => setSelectedEvent(null);
+
+  return (
+    <section className={`py-24 bg-black relative text-white ${selectedEvent ? 'z-[100]' : 'z-10'}`}>
+      <div className="container mx-auto px-4 max-w-[1440px]">
+        
+        {/* Header */}
+        <div className="text-center mb-10">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold mb-4 font-heading"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Discover <span className="text-primary">Events</span>
+          </motion.h2>
+          <motion.p 
+            className="text-gray-400 text-lg md:text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Explore our diverse range of workshops and hackathons
+          </motion.p>
+        </div>
+
+        {/* Filters */}
+        <motion.div 
+          className="flex flex-wrap items-center justify-center gap-3 mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
+                activeFilter === filter
+                  ? "bg-primary text-primary-foreground shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                  : "bg-[#0c1428] text-gray-400 hover:bg-[#152342] hover:text-white border border-transparent"
+              }`}
+            >
+              {filter}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 lg:gap-x-8 lg:gap-y-16">
+          {(hideExploreButton ? eventsData : eventsData.slice(0, 3)).map((evt) => (
+            <motion.div 
+              key={evt.id}
+              onClick={() => setSelectedEvent(evt)}
+              className="w-full md:w-[440px] h-[342px] mx-auto rounded-xl overflow-hidden bg-[#0A101F] shadow-lg flex flex-col group cursor-pointer border border-[#1e293b]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: evt.delay }}
+              whileHover={{ y: -5 }}
+            >
+              {/* Image Area */}
+              <div className="h-[244px] bg-[#27272a] flex items-center justify-center relative overflow-hidden">
+                {evt.image ? (
+                  <img src={evt.image} alt={evt.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                ) : (
+                  <span className="text-zinc-500 font-medium text-sm z-10 group-hover:scale-110 transition-transform duration-500">img</span>
+                )}
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+              </div>
+
+              {/* Details */}
+              <div className="w-full md:w-[440px] h-[98px] p-4 bg-[#040814] flex flex-col justify-between border-t border-[#1e293b] rounded-bl-[5px] rounded-br-[5px] opacity-100">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 
+                      className="text-white mb-0.5 group-hover:text-primary transition-colors duration-300 whitespace-nowrap"
+                      style={{
+                        opacity: 1,
+                        fontFamily: "'BL Melody', sans-serif",
+                        fontWeight: 600,
+                        fontSize: '20px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%'
+                      }}
+                    >
+                      {evt.name}
+                    </h3>
+                    <p className="text-xs text-gray-400">
+                      {evt.description}
+                    </p>
+                  </div>
+                  <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                    {evt.phase}
+                  </span>
+                </div>
+
+                <div>
+                  <span className="text-primary text-[10px] sm:text-xs font-semibold flex items-center gap-1.5 group-hover:underline w-max">
+                    View Details 
+                    <div className="bg-white rounded-full p-0.5 w-3 h-3 flex items-center justify-center">
+                      <ChevronRight size={10} className="text-black ml-[1px]" strokeWidth={3} />
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Explore Button */}
+        {!hideExploreButton && (
+          <motion.div 
+            className="flex justify-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link to="/events" className="btn-shine bg-primary text-primary-foreground font-semibold px-10 py-3 rounded-full hover:bg-background hover:text-primary hover:border-primary border-2 border-primary transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-none inline-block">
+              Explore
+            </Link>
+          </motion.div>
+        )}
+
+      </div>
+
+      {/* Event Details Modal */}
+      <AnimatePresence>
+        {selectedEvent && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8">
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={closeModal}
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+              />
+              
+              {/* Modal Content */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                className="relative w-full max-w-2xl bg-[#0A101F] border border-[#1e293b] rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-full sm:max-h-[90vh]"
+              >
+              {/* Close Button */}
+              <button 
+                onClick={closeModal}
+                className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black transition-colors"
+                aria-label="Close modal"
+              >
+                <X size={18} />
+              </button>
+
+              {/* Modal Image Header */}
+              <div className="h-48 md:h-64 relative w-full flex-shrink-0 bg-[#27272a]">
+                {selectedEvent.image ? (
+                  <img src={selectedEvent.image} alt={selectedEvent.name} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="flex items-center justify-center h-full w-full">
+                    <span className="text-zinc-500 font-medium">img</span>
+                  </div>
+                )}
+                {/* Fade to dark gradient for seamless text transition */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A101F] via-[#0A101F]/40 to-transparent" />
+              </div>
+
+              <div className="p-6 md:p-8 flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" data-lenis-prevent="true">
+                <div className="flex items-center gap-3 mb-4 relative z-10">
+                  <span className="bg-primary text-primary-foreground text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.4)]">
+                    {selectedEvent.phase}
+                  </span>
+                  <span className="text-gray-300 text-sm font-medium bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">
+                    {selectedEvent.type}
+                  </span>
+                </div>
+                
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 relative z-10 font-heading">
+                  {selectedEvent.name}
+                </h2>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-sm text-gray-400 bg-[#040814] p-4 rounded-xl border border-[#1e293b]">
+                  {selectedEvent.date && <div><strong className="text-gray-200 block mb-1">Date</strong> {selectedEvent.date}</div>}
+                  {selectedEvent.time && <div><strong className="text-gray-200 block mb-1">Time</strong> {selectedEvent.time}</div>}
+                  {selectedEvent.venue && <div className="sm:col-span-2"><strong className="text-gray-200 block mb-1">Venue</strong> {selectedEvent.venue}</div>}
+                </div>
+
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold text-white mb-3">About the Event</h3>
+                  <p className="text-gray-400 leading-relaxed text-sm md:text-base whitespace-pre-wrap">
+                    {selectedEvent.fullDescription || selectedEvent.description}
+                  </p>
+                </div>
+
+                {/* Optional Timeline Rendering */}
+                {selectedEvent.timeline && selectedEvent.timeline.length > 0 && (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-semibold text-white mb-4">Timeline</h3>
+                    <div className="space-y-4">
+                      {selectedEvent.timeline.map((item: any, idx: number) => (
+                        <div key={idx} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 rounded-xl bg-[#040814] border border-[#1e293b]">
+                          <div>
+                            <h4 className="font-bold text-white text-base mb-1">{item.title}</h4>
+                            <p className="text-sm text-gray-400">{item.timeFrame} IST</p>
+                          </div>
+                          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm font-semibold bg-[#152342] text-blue-300 w-max shrink-0">
+                            <Calendar size={14} />
+                            {item.startDate} {item.startDate !== item.endDate ? `- ${item.endDate}` : ''}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Footer/CTA */}
+                <div className="pt-6 border-t border-[#1e293b] flex justify-end">
+                  <a 
+                    href={selectedEvent.registrationLink || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-shine bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-primary transition-colors duration-300 flex items-center gap-2 shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+                  >
+                    Register Now
+                    <div className="bg-primary-foreground/20 rounded-full p-0.5">
+                      <ChevronRight size={16} />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
+
+export default EventCards;

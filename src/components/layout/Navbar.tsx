@@ -2,10 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logoFull from "@/assets/logo/2nd_main_3.png";
+import logoFull from "@/assets/logo/reva-logo-black.svg";
 
 const navLinks = [
   { label: "About", href: "#about", type: "hash" },
+  { label: "Events", href: "/events", type: "route" },
   { label: "Schedule", href: "#schedule", type: "hash" },
   { label: "Contact", href: "#contact", type: "hash" },
 ];
@@ -71,7 +72,11 @@ const Navbar = () => {
       setOpen(false);
       // Small delay on mobile to let menu start closing
       setTimeout(() => {
-        navigate(`/${link.href}`);
+        navigate("/");
+        // Delay applying the hash until the homepage has fully mounted and measured heights
+        setTimeout(() => {
+          navigate(`/${link.href}`, { replace: true });
+        }, 400);
       }, open ? 100 : 0);
       return;
     }
@@ -91,22 +96,23 @@ const Navbar = () => {
     }
   };
 
-  const registerLink = { label: "Register", href: "/signup", type: "route" as const };
 
   return (
+    <>
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 will-change-transform ${
-        visible ? "translate-y-0" : "-translate-y-full"
-      } ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-background/80 backdrop-blur-sm"
-      } border-b border-border`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 will-change-transform translate-y-0 ${
+        isHomePage && !scrolled
+          ? "bg-transparent border-b border-transparent"
+          : !isHomePage && !scrolled
+          ? "bg-white"
+          : "bg-white/90 backdrop-blur-md border-b border-gray-200"
+      }`}
     >
       <div className="container flex items-center justify-between h-16">
+        {/* Logo: hidden on mobile (rendered outside nav instead) */}
         <Link 
           to="/" 
-          className="flex items-center gap-2"
+          className="hidden md:flex items-center gap-2"
           onClick={(e) => {
             if (isHomePage) {
               e.preventDefault();
@@ -114,7 +120,7 @@ const Navbar = () => {
             }
           }}
         >
-          <img src={logoFull} alt="REVA RIFT" className="h-10 md:h-11" />
+          <img src={logoFull} alt="REVA RIFT" className="h-9" />
         </Link>
 
         {/* Desktop */}
@@ -132,7 +138,7 @@ const Navbar = () => {
               ) : (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   onClick={(event) => handleNavClick(event, link)}
                   className="nav-link text-sm font-semibold text-foreground hover:text-primary transition-colors py-1"
                 >
@@ -141,17 +147,11 @@ const Navbar = () => {
               )
             ))}
           </div>
-          <Link
-            to="/signup"
-            className="btn-shine inline-flex items-center justify-center rounded-full text-sm font-semibold px-5 py-2 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary"
-          >
-            Register
-          </Link>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle — hidden on mobile (rendered outside nav instead), visible logic on desktop not needed */}
         <button
-          className="md:hidden text-foreground"
+          className="hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -190,7 +190,7 @@ const Navbar = () => {
               ) : (
                 <motion.a
                   key={link.label}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   onClick={(event) => handleNavClick(event, link)}
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -202,18 +202,38 @@ const Navbar = () => {
               )
             ))}
               </div>
-            <Link
-              to="/signup"
-              onClick={() => setOpen(false)}
-              className="btn-shine mt-4 inline-flex items-center justify-center rounded-full text-base font-semibold px-6 py-3 border-2 border-primary bg-primary text-primary-foreground transition-all duration-200 hover:bg-background hover:text-primary hover:border-primary w-full max-w-xs"
-            >
-              Register
-            </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
+
+    {/* Mobile-only fixed logo — lives outside nav so it's never hidden by nav transform */}
+    <Link
+      to="/"
+      className="fixed top-0 left-0 z-50 flex items-center h-16 px-4 md:hidden"
+      onClick={(e) => {
+        if (isHomePage) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }}
+    >
+      <img src={logoFull} alt="REVA RIFT" className="h-8" />
+    </Link>
+
+    {/* Mobile-only fixed hamburger — stays visible when navbar hides on scroll */}
+    <button
+      className="fixed top-0 right-0 z-50 flex items-center h-16 px-4 md:hidden text-foreground"
+      onClick={() => {
+        if (!visible) setVisible(true);
+        setOpen((prev) => !prev);
+      }}
+      aria-label="Toggle menu"
+    >
+      {open ? <X size={24} /> : <Menu size={24} />}
+    </button>
+    </>
   );
 };
 
